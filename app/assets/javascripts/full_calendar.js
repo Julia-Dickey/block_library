@@ -4,7 +4,7 @@ initialize_calendar = function() {
     var calendar = $(this);
     calendar.fullCalendar({
       header: {
-        left: 'prev,next today',
+        left: 'prev,next',
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
@@ -20,7 +20,7 @@ initialize_calendar = function() {
           $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
           $('.end_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
         });
-        
+
         calendar.fullCalendar('unselect');
       }
     });

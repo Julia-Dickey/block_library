@@ -1,23 +1,20 @@
-// h3 {
-//   margin: 2em auto;
-//   max-width: 900px;
-// }
+$grey: #999;
+
 .calendar {
   max-width: 600px;
   margin: 2em auto;
+  color: $grey;
   .fc-center h2 {
     font-size: 2em;
   }
   th.fc-day-header.fc-widget-header, .fc-center {
     font-variant: small-caps;
-    color: #999;
     font-size: .75em;
     font-weight: lighter;
   }
   td.fc-day-top {
     text-align: center;
     padding: auto;
-    color: #999;
   }
   .fc-past {
     background: whitesmoke;
@@ -26,21 +23,35 @@
     padding: .25em .5em 0 0;
     font-weight: lighter;
   }
-  button.fc-state-default {
-    background: #fff !important;
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0.75);
-    .fc-icon {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #999;
-      font-weight: lighter;
+  button {
+    .fc-state-down, .fc-state-active {
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+      background: $grey !important;
     }
+    .fc-state-default {
+      text-shadow: 0 0 0 rgba(0, 0, 0, .7);
+      .fc-icon.fc-icon-right-single-arrow {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .6em;
+        font-weight: lighter;
+      }
+    }
+    background: #fff !important;
+    color: $grey;
+    font-size: .75em;
+    }
+    // &:focus {
+    //   outline-color: rgb(0, 0, 0) !important;
+    // }
   }
-}
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 400px) {
   .container-fluid {
     height: 100vh;
     .fc-view-container {
+      table {
+        height: 200px;
+      }
     }
   }
   .calendar {
@@ -54,7 +65,6 @@
       font-weight: lighter;
       text-align: center;
       padding: 0;
-      color: #999;
     }
     button.fc-agendaWeek-button {
       display: none;
@@ -64,24 +74,18 @@
     }
     th.fc-day-header.fc-widget-header {
       font-variant: small-caps;
-      color: #999;
       font-weight: lighter;
       font-size: .75em;
     }
     .fc-day-number {
       padding: 0;
     }
-    .fc-day-top {
-      .fc-day-number {
-        width: 100%;
-        padding: auto;
-      }
+    .fc-day-top .fc-day-number {
+      width: 100%;
+      padding: auto;
     }
     fc-content-skeleton {
       padding-bottom: 0;
     }
-
   }
-
-
 }
