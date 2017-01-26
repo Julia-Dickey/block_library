@@ -6,13 +6,13 @@ initialize_calendar = function() {
       header: {
         left: 'prev,next',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay'
+        right: 'month,agendaWeek,listWeek'
       },
       selectable: true,
       selectHelper: true,
       editable: true,
       eventLimit: true,
-
+      events: '/events.json',
       select: function(start, end) {
         $.getScript('/events/new', function() {
           $('#event_date_picker').val(moment(start).format("MM/DD/YYYY HH:mm") + '&mdash;' + moment(end).format("MM/DD/YYYY HH:mm"));

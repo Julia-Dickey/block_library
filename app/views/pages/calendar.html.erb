@@ -1,4 +1,5 @@
-<!-- <h3>Check out our upcoming events</h3> -->
 <div class="container-fluid">
   <div class='calendar'></div>
+  <!-- <button class="btn btn-outline-success" type="button" name="new_event" id="new-event-button">Add an event</button> -->
+  <%= link_to "events", new_event_path, class: "btn btn-outline-success", id: "new-event", remote: true %>
 </div>
