@@ -1,2 +1,54 @@
+// h3 {
+//   margin: 2em auto;
+//   max-width: 900px;
+// }
 .calendar {
+  max-width: 900px;
+  margin: 2em auto;
+  th.fc-day-header.fc-widget-header, .fc-center {
+    font-variant: small-caps;
+    font-weight: lighter;
+    color: #999;
+  }
+  td.fc-day-top {
+    text-align: center;
+    padding: auto;
+    color: #999;
+  }
+  .fc-past {
+    background: whitesmoke;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .calendar {
+    border-radius: 4px;
+    margin: 1em auto;
+    height: 100vh;
+    td.fc-day-top {
+      font-size: 32px;
+      font-weight: lighter;
+      text-align: center;
+      padding: 0;
+      color: #999;
+    }
+    button.fc-agendaWeek-button {
+      display: none;
+    }
+    div.fc-center h2 {
+      padding-top: 1em;
+    }
+    th.fc-day-header.fc-widget-header {
+      font-variant: small-caps;
+      color: #999;
+      font-size: .75em;
+    }
+    .fc-day-top {
+      .fc-day-number {
+      }
+    }
+
+  }
+
+
 }
