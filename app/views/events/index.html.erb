@@ -1,7 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class='calendar'></div>
 
-<h1>Events</h1>
+  <%= link_to "Add an event", new_event_path, { class: "btn btn-outline-success", id: "new-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-event-modal'} %>
+  <!-- <%= link_to "Add an event", new_event_path, class: "btn btn-outline-success", id: "new-event" %> -->
+</div>
 
+
+  <div class="modal fade" id="new-event-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add an event</h5>
+          <div class="modal-body" id="new-event-form">
+            <%= render "form" %>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-success">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!--
 <table>
   <thead>
     <tr>
@@ -12,7 +41,7 @@
   </thead>
 
   <tbody>
-    <!-- <% @events.each do |event| %>
+    <% @events.each do |event| %>
       <tr>
         <td><%= event.title %></td>
         <td><%= event.body %></td>
@@ -20,10 +49,6 @@
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %> -->
+    <% end %>
   </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+</table> -->
