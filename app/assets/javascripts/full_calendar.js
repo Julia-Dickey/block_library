@@ -12,13 +12,13 @@ initialize_calendar = function() {
       selectHelper: true,
       editable: true,
       eventLimit: true,
-      events: {
-            url: '/events/get_events',
-            cache: true,
-            type: 'POST',
-            data:{appdata: $('#appdata').val()}
-          },
-      // events: '/events.json',
+      // events: {
+      //       url: '/events',
+      //       cache: true,
+      //       type: 'GET',
+      //       data:{appdata: $('#appdata').val()}
+      //     },
+      events: '/events.json',
       select: function(start, end) {
         $.getScript('/events/new', function() {
           $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + '&mdash;' + moment(end).format("MM/DD/YYYY HH:mm"));

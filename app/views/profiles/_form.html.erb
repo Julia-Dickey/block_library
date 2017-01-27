@@ -1,4 +1,4 @@
-  <%= form_for(profile) do |f| %>
+  <%= form_for @profile do |f| %>
     <% if profile.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="field form-group">
-      <%= f.label :status %>
+      <%= f.label :status, "Member Status" %>
       <%= f.text_field :status, :class => "form-control" %>
     </div>
 
@@ -60,6 +60,7 @@
       <%= f.label :exit, "Exit Strategy" %>
       <%= f.text_field :exit, :class => "form-control" %>
     </div>
+
 
     <div class="field form-group">
       <%= f.label :website %>

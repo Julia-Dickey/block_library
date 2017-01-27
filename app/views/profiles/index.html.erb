@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
+<div class="col-sm-8">
 
-<h1>Profiles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Brand</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <h3>Starve Ups Members</h3>
+  <%= link_to 'New Profile', new_profile_path %>
     <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.brand %></td>
-        <td><%= profile.body %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-6">
+        <p><strong><%= profile.company %></strong></p>
+        <p><%= profile.overview %></p>
+        <!-- <p><%= profile.status %></p>
+        <p><%= profile.industry %></p>
+        <p>Founded in <%= profile.founded %></p>
+        <p>Member since <%= profile.membersince %></p>
+        <p>Funding type: <%= profile.membersince %></p>
+        <p>Business strategy: <%= profile.membersince %></p>
+        <%= link_to 'Show', profile %>
+        <%= link_to 'Edit', edit_profile_path(profile) %>
+        <%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+  <br>
 
-<%= link_to 'New Profile', new_profile_path %>
+</div>
