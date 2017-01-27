@@ -5,7 +5,23 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @event = Event.new
+    @eventsList = Event.all
     @events = Event.where(start: params[:start]..params[:end])
+  end
+
+  def get_events
+    @events = Event.all
+    events = []
+    color = "#336699"
+    @events.each do |event|
+      events = {:id => event.id,
+               :title => event.title,
+               :start => "#{event.start_time.iso8601}",
+               :end => "#{event.end_time.iso8601}",
+               :allDay=>false,
+               :backgroundColor => color}
+    end
+    render :text => events.to_json
   end
 
   # GET /events/1
@@ -16,10 +32,10 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
   end
 
   # GET /events/1/edit

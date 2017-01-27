@@ -54,6 +54,12 @@ gem 'will_paginate-bootstrap', '0.2.5'
 # API responses
 gem 'httparty'
 
+# fullCalendar
+gem 'fullcalendar-rails'
+
+# Tracking time
+gem 'momentjs-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -1,20 +1,43 @@
-<div class="col-sm-8">
+<div class="form_new">
 
   <%= form_for @event, remote: true do |f| %>
 
     <div class="field form-group">
-      <%= f.label :title %>
+      <%= f.label :title, "Event title" %>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
 
     <div class="field form-group">
-      <%= f.label :body %>
+      <%= f.label :body, "Description" %>
       <%= f.text_area :body, :class => "form-control" %>
     </div>
+    <div class="field form-group">
+      <%= f.label :allDay, "Is this an all day event?" %>
+      <%= f.radio_button :allDay, false, :checked => true %>
+      <%= f.label :allDay_no, 'No' %>
+      <%= f.radio_button :allDay, true %>
+      <%= f.label :allDay_yes, 'Yes' %><br>
+    </div>
 
-    <div class="actions form-inline">
+    <div class="field form-group">
+      <%= f.label :start, 'Begins' %>
+      <%= f.datetime_field :start, class: "form-control date-fields" %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :end, 'Ends' %>
+      <%= f.datetime_field :end, class: "form-control date-fields" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :color, 'Color' %>
+      <%= f.text_field :color, class: "form-control date-fields" %>
+    </div>
+
+    <div class="actions form-inline modal-footer">
       <%= f.submit class: 'btn btn-outline-success' %>
-      <button type="submit" class="btn btn-outline-default">Cancel</button>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      <!-- <button type="button" class="btn btn-outline-default">Cancel</button> -->
     </div>
 
   <% end %>
