@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127200143) do
+ActiveRecord::Schema.define(version: 20170127212633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 20170127200143) do
     t.boolean  "resourceEditable"
     t.boolean  "overlap"
     t.string   "color"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "brand"
+    t.text     "body"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "company"
+    t.string   "overview"
+    t.string   "status"
+    t.string   "industry"
+    t.string   "founded"
+    t.string   "membersince"
+    t.string   "funding"
+    t.string   "strategy"
+    t.string   "exit"
+    t.string   "website"
+    t.string   "email"
   end
 
 end

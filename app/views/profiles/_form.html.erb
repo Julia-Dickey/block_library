@@ -1,0 +1,77 @@
+  <%= form_for(profile) do |f| %>
+    <% if profile.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+        <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field form-group">
+      <%= f.label :company %>
+      <%= f.text_field :company, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :overview %>
+      <%= f.text_field :overview, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :status %>
+      <%= f.text_field :status, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :industry %>
+      <%= f.text_field :industry, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :founded %>
+      <%= f.text_field :founded, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :membersince, "Member Since" %>
+      <%= f.text_field :membersince, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :funding %>
+      <%= f.text_field :funding, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :strategy, "Business Strategy" %>
+      <%= f.text_field :strategy, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :exit, "Exit Strategy" %>
+      <%= f.text_field :exit, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :website %>
+      <%= f.text_field :website, :class => "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :email %>
+      <%= f.text_field :email, :class => "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit class: 'btn btn-outline-success' %>
+    </div>
+  <% end %>
