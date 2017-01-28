@@ -1,24 +1,19 @@
-<p id="notice"><%= notice %></p>
-<div class="col-sm-8">
+<div class="background">
+  <p id="notice"><%= notice %></p>
+  <div class="col-sm-9 profile-header">
+    <h3>Starve Ups Members</h3>
+    <%= link_to 'New Profile', new_profile_path %>
+  </div>
+  <div class="col-sm-9">
 
-  <h3>Starve Ups Members</h3>
-  <%= link_to 'New Profile', new_profile_path %>
-    <% @profiles.each do |profile| %>
-      <div class="col-sm-6">
-        <p><strong><%= profile.company %></strong></p>
-        <p><%= profile.overview %></p>
-        <!-- <p><%= profile.status %></p>
-        <p><%= profile.industry %></p>
-        <p>Founded in <%= profile.founded %></p>
-        <p>Member since <%= profile.membersince %></p>
-        <p>Funding type: <%= profile.membersince %></p>
-        <p>Business strategy: <%= profile.membersince %></p>
-        <%= link_to 'Show', profile %>
-        <%= link_to 'Edit', edit_profile_path(profile) %>
-        <%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %> -->
-      </div>
+    <% if @profiles.any? %>
+      <% @profiles.each do |profile| %>
+        <div class="col-sm-4 tiles">
+          <p><strong><%= profile.company %></strong></p>
+          <p><%= profile.overview %></p>
+
+        </div>
+      <% end %>
     <% end %>
-
-  <br>
-
+  </div>
 </div>

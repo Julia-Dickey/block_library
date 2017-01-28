@@ -3,7 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $grey: #999;
 
+.background {
+  // background-color: whitesmoke;
+  border-radius: 4px;
 
+}
 .col-sm-6.form-outline {
   margin: 4em auto;
   border-radius: 4px;
@@ -28,4 +32,26 @@ h3 {
   padding-bottom: 1em;
   font-weight: lighter;
   letter-spacing: 1px;
+}
+
+.col-sm-9 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tiles {
+  flex-direction: column;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  margin-right: 1em;
+  padding-top: .5em;
+  p {
+    font-size: 1em;
+    font-weight: 300;
+    color: $grey;
+    letter-spacing: .5px;
+  }
+  em {
+    letter-spacing: normal;
+  }
 }
