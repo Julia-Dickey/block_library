@@ -1,27 +1,40 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  # respond_to do |format|
+  #   format.html
+  #   format.json { render json:@events.to_json }
+  # end
+  #
+  # def self.between(start_time, end_time)
+  #   where('start_at > :lo and start_at < :up',
+  #     :lo => Event.format_date(start_time),
+  #     :up => Event.format_date(end_time)
+  #   )
+  # end
+  #
+  # def self.format_date(date_time)
+  #  Time.at(date_time.to_i).to_formatted_s(:db)
+  # end
+  #
+  # def as_json(options = {})
+  #   {
+  #     :id => self.id,
+  #     :title => self.title,
+  #     :start => start_at.rfc822,
+  #     :end => end_at.rfc822,
+  #     :allDay => allDay,
+  #     :url => Rails.application.routes.url_helpers.events_path(id),
+  #     :color => "green"
+  #   }
+  # end
+
   # GET /events
   # GET /events.json
   def index
     @event = Event.new
     @eventsList = Event.all
     @events = Event.where(start: params[:start]..params[:end])
-  end
-
-  def get_events
-    @events = Event.all
-    events = []
-    color = "#336699"
-    @events.each do |event|
-      events = {:id => event.id,
-               :title => event.title,
-               :start => "#{event.start_time.iso8601}",
-               :end => "#{event.end_time.iso8601}",
-               :allDay=>false,
-               :backgroundColor => color}
-    end
-    render :text => events.to_json
   end
 
   # GET /events/1
@@ -32,10 +45,10 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
   end
 
   # GET /events/1/edit
@@ -46,40 +59,19 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
-    end
+    @event.save
   end
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    respond_to do |format|
-      if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { render :show, status: :ok, location: @event }
-      else
-        format.html { render :edit }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
-    end
+    @event.update(event_params)
   end
 
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
     @event.destroy
-    respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
