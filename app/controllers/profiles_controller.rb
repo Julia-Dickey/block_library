@@ -4,7 +4,8 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.order('company ASC')
+
   end
 
   # GET /profiles/1

@@ -1,2 +1,4 @@
 class Profile < ApplicationRecord
+
+
 end

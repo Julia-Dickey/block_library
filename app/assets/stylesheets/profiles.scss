@@ -36,22 +36,36 @@ h3 {
 
 .col-sm-9 {
   display: flex;
-  justify-content: space-between;
 }
 
-.tiles {
-  flex-direction: column;
-  border: 1px solid $grey;
-  border-radius: 4px;
-  margin-right: 1em;
-  padding-top: .5em;
-  p {
-    font-size: 1em;
-    font-weight: 300;
+.profile-list {
+  width: 100%;
+  flex-wrap: wrap;
+  a {
     color: $grey;
-    letter-spacing: .5px;
-  }
-  em {
-    letter-spacing: normal;
   }
 }
+
+.floating-button {
+  border-radius: 8px;
+  position: absolute;
+  top: 80vh;
+  right: 10px;
+}
+
+// .tiles {
+//   flex-direction: column;
+//   border: 1px solid $grey;
+//   border-radius: 4px;
+//   margin-right: 1em;
+//   padding-top: .5em;
+//   p {
+//     font-size: 1em;
+//     font-weight: 300;
+//     color: $grey;
+//     letter-spacing: .5px;
+//   }
+//   em {
+//     letter-spacing: normal;
+//   }
+// }
