@@ -1,23 +1,59 @@
-<!-- <img class="img-fluid" src="../images/4646EC9D-EF01-4C27-BF32A35C2A8C5D23_W960_H420.png" alt="Red Duck ketchup"> -->
+
+<!-- <div class="container">
+  <%= link_to '< Member Directory', profiles_path %>
+</div> -->
 <div class="jumbotron profile-show">
   <h1 class="display-5"><%= @profile.company %></h1>
   <!-- <p class="lead"></p> -->
 </div>
-<div class="container-fluid">
+
+<div class="container">
+  <%= link_to 'Edit', edit_profile_path(@profile), :class => "btn btn-primary floating-button shadow" %>
   <blockquote>"<%= @profile.overview %>"</blockquote>
   <div class="row">
-    <div class="col-sm-6">
-      <p><strong>Brand:</strong>
-        <%= @profile.brand %></p>
+    <div class="col-sm-6 color-block">
+      <h5>AT A GLANCE</h5>
+      <div class="row profile-details-block">
+        <div class="col">
+          <p class="profile-label">INDUSTRY:</p>
+          <p class="body"><%= @profile.industry %></p>
+        </div>
+        <div class="col">
+          <p class="profile-label">MEMBER STATUS</p>
+          <p class="body"><%= @profile.status %></p>
+        </div>
       </div>
-      <div class="col-sm-6">
-        <p>
-          <strong>Body:</strong>
-          <%= @profile.body %>
-        </p>
+      <div class="row profile-details-block">
+        <div class="col">
+          <p class="profile-label">FOUNDED:</p>
+          <p class="body"><%= @profile.founded %></p>
+        </div>
+        <div class="col">
+          <p class="profile-label">MEMBER SINCE:</p>
+          <p class="body"><%= @profile.membersince %></p>
+        </div>
       </div>
-  </div>
 
-  <%= link_to 'Edit', edit_profile_path(@profile) %> |
-  <%= link_to 'Back', profiles_path %>
+      <p class="profile-label">FUNDING SOURCES:</p>
+      <p class="body"><%= @profile.funding %></p>
+      <p class="profile-label">BUSINESS STRATEGY:</p>
+      <p class="body"><%= @profile.strategy %></p>
+      <p class="profile-label">EXIT STRATEGY:</p>
+      <p class="body"><%= @profile.exit %></p>
+      <p class="profile-label">WEBSITE:</p>
+      <%= link_to @profile.website, :target => "_blank" %>
+    </div>
+    <div class="col-sm-6">
+      <h5><%=@profile.company%></h5>
+      <p class="body"><%=@profile.body%></p>
+    </div>
+  </div>
+</div>
+
+<img class="img-fluid" src="../images/founders.jpeg" alt="Red Duck ketchup founders">
+<div class="contact-info">
+  <h4>WE'D LOVE TO HEAR FROM YOU</h4>
+  <p><%= @profile.company %><br/>
+  <span class="link">info@profile.com</span><br/>
+  <span class="link"><%= @profile.website %></span></p>
 </div>

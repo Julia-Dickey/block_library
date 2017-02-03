@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $grey: #999;
+$dkgrey: #616161;
+$blue: #4A89FF;
 
 .background {
   // background-color: darkgrey;
@@ -39,6 +41,11 @@ h3 {
   letter-spacing: 1px;
 }
 
+h5 {
+  color: $dkgrey;
+  margin-bottom: 1em;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -51,24 +58,32 @@ ul {
     color: $grey;
     font-weight: bolder;
     &:hover {
-      color: #4A89FF;
+      color: $blue;
       text-decoration: none;
     }
   }
 }
 
 .floating-button {
-  border-radius: 8px;
-  position: absolute;
-  top: 80vh;
+  border-radius: 6px;
+  position: fixed;
+  bottom: 10px;
   right: 10px;
+  z-index: 1;
+}
+
+.shadow {
+  -moz-box-shadow:    0px 2px 6px 3px #ccc;
+  -webkit-box-shadow: 0px 2px 6px 3px #ccc;
+  box-shadow:         0px 2px 6px 3px #ccc;
 }
 
 blockquote {
   color: $grey;
   font-style: oblique;
   font-size: 1em;
-  padding: 2em 1em;
+  padding: 0 1em;
+  margin-bottom: 32px;
 }
 
 .profile-show {
@@ -84,6 +99,50 @@ blockquote {
   color: white;
   margin: auto;
   text-align: center;
+}
+
+.color-block {
+  padding: 2em 1em;
+  background-color: whitesmoke;
+  margin-bottom: 2em;
+  max-width: 400px;
+}
+
+.profile-label {
+  font-size: .5em;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: $dkgrey;
+}
+
+.body {
+  color: $dkgrey;
+  margin-bottom: 2em;
+}
+
+.profile-details-block {
+  justify-content: space-between;
+  .col {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  blockquote {
+    display: none;
+  }
+}
+
+.contact-info {
+  h4 {
+    padding-bottom: 2em;
+  }
+  background-color: #252429;
+  padding: 1em;
+  color: white;
+  .link {
+    color: $blue;
+  }
 }
 
 // .tiles {
