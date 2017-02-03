@@ -56,9 +56,9 @@ $blue: #4A89FF;
 }
 
 h3 {
-  font-size: 2.5em;
+  font-size: 2em;
   color: $grey;
-  margin-bottom: 32px;
+  margin-bottom: 1em;
   font-weight: lighter;
   letter-spacing: 1px;
 }
@@ -86,12 +86,25 @@ ul {
   }
 }
 
+
+
 .floating-button {
   border-radius: 6px;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  top: 11em;
+  right: -30px;
   z-index: 1;
+  .edit-button {
+    color: transparent;
+  }
+  @include border-radius(10px 0px 0px 10px);
+  opacity: .95;
+  &:hover {
+    right: 0;
+    .edit-button {
+      color: white;
+    }
+  }
 }
 
 .shadow {
@@ -130,7 +143,7 @@ ul {
   padding: 1.5em;
   @include gradient-vertical-three-colors;
   margin-bottom: 2em;
-  max-width: 575px;
+  max-height: 520px;
 }
 
 .profile-label {
@@ -147,7 +160,9 @@ ul {
 
 .body-all {
   margin-bottom: 2em;
+  line-height: 1.5;
   color: $grey;
+  max-width: 800px;
   h5 {
     padding-top: 1em;
   }
