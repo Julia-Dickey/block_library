@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<!-- <img class="img-fluid" src="../images/4646EC9D-EF01-4C27-BF32A35C2A8C5D23_W960_H420.png" alt="Red Duck ketchup"> -->
+<div class="jumbotron profile-show">
+  <h1 class="display-5"><%= @profile.company %></h1>
+  <!-- <p class="lead"></p> -->
+</div>
+<div class="container-fluid">
+  <blockquote>"<%= @profile.overview %>"</blockquote>
+  <div class="row">
+    <div class="col-sm-6">
+      <p><strong>Brand:</strong>
+        <%= @profile.brand %></p>
+      </div>
+      <div class="col-sm-6">
+        <p>
+          <strong>Body:</strong>
+          <%= @profile.body %>
+        </p>
+      </div>
+  </div>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @profile.brand %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @profile.body %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%= link_to 'Back', profiles_path %>
+</div>
