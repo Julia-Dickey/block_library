@@ -4,58 +4,71 @@
 </div> -->
 <div class="jumbotron profile-show">
   <h1 class="display-5"><%= @profile.company %></h1>
-  <!-- <p class="lead"></p> -->
 </div>
 
 <div class="container">
   <%= link_to 'Edit', edit_profile_path(@profile), :class => "btn btn-primary floating-button shadow" %>
-  <blockquote>"<%= @profile.overview %>"</blockquote>
   <div class="row">
     <div class="col-sm-6 color-block">
-      <h5>AT A GLANCE</h5>
+      <h5><%= @profile.company%> at a Glance</h5>
       <div class="row profile-details-block">
         <div class="col">
           <p class="profile-label">INDUSTRY:</p>
-          <p class="body"><%= @profile.industry %></p>
+          <p class="body"><i class="fa fa-area-chart" aria-hidden="true"></i>
+            <%= @profile.industry %></p>
         </div>
         <div class="col">
           <p class="profile-label">MEMBER STATUS</p>
-          <p class="body"><%= @profile.status %></p>
+          <p class="body"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<%= @profile.status %></p>
         </div>
       </div>
       <div class="row profile-details-block">
         <div class="col">
           <p class="profile-label">FOUNDED:</p>
-          <p class="body"><%= @profile.founded %></p>
+          <p class="body"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <%= @profile.founded %></p>
         </div>
         <div class="col">
           <p class="profile-label">MEMBER SINCE:</p>
-          <p class="body"><%= @profile.membersince %></p>
+          <p class="body"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <%= @profile.membersince %> </p>
         </div>
       </div>
-
       <p class="profile-label">FUNDING SOURCES:</p>
-      <p class="body"><%= @profile.funding %></p>
+      <p class="body"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;
+      <%= @profile.funding %></p>
       <p class="profile-label">BUSINESS STRATEGY:</p>
-      <p class="body"><%= @profile.strategy %></p>
+      <p class="body"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;
+        <%= @profile.strategy %></p>
       <p class="profile-label">EXIT STRATEGY:</p>
-      <p class="body"><%= @profile.exit %></p>
+      <p class="body"><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;
+        <%= @profile.exit %></p>
       <p class="profile-label">WEBSITE:</p>
+      <i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;
       <%= link_to @profile.website, :target => "_blank" %>
     </div>
-    <div class="col-sm-6">
-      <h5><%=@profile.company%></h5>
-      <p class="body-all"><%=@profile.body%></p>
+    <div class="col-sm-6 body-all">
+      <h3 class="quote">"<%= @profile.overview %>"</h3>
+      <hr>
+      <h5>About <%=@profile.company%></h5>
+      <p class=><%=@profile.body%></p>
     </div>
   </div>
 </div>
 
-<img class="img-fluid" src="../images/founders.jpeg" alt="Red Duck ketchup founders">
-<div class="contact-info">
-  <div class="container">
-    <h4>WE'D LOVE TO HEAR FROM YOU</h4>
-    <p><%= @profile.company %><br/>
-    <span class="link">info@profile.com</span><br/>
-    <span class="link"><%= @profile.website %></span></p>
+<!-- <img class="" src="../images/founders.jpeg" alt="Red Duck ketchup founders"> -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 contact-image">
+    </div>
+    <div class="col-sm-6 contact-info">
+      <h4>WE'D LOVE TO HEAR FROM YOU</h4>
+      <p><%= @profile.company %><br/>
+      <span class="link">info@profile.com</span><br/>
+      <span class="link"><%= @profile.website %></span></p>
+      <br/>
+      <p class="profile-label">FOUNDED BY:</p>
+      <p>Founder's Name<br/>
+      1(503)321-5432<br/>
+      <span class="link">email@founder.com</span></p>
+    </div>
   </div>
 </div>

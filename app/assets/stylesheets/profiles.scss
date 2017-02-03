@@ -5,6 +5,28 @@ $grey: #999;
 $dkgrey: #616161;
 $blue: #4A89FF;
 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+@mixin gradient-vertical($start-color: #F7F7F7, $end-color: #E5E5E5, $start-percent: 0%, $end-percent: 100%) {
+  background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Opera 12
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+}
+
+@mixin gradient-vertical-three-colors($start-color: #F2F2F2, $mid-color: #F7F7F7, $color-stop: 50%, $end-color: #E5E5E5) {
+  background-image: -webkit-linear-gradient($start-color, $mid-color $color-stop, $end-color);
+  background-image: -o-linear-gradient($start-color, $mid-color $color-stop, $end-color);
+  background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
 .background {
   // background-color: darkgrey;
   border-radius: 4px;
@@ -36,7 +58,7 @@ $blue: #4A89FF;
 h3 {
   font-size: 2.5em;
   color: $grey;
-  padding-bottom: 1em;
+  margin-bottom: 32px;
   font-weight: lighter;
   letter-spacing: 1px;
 }
@@ -78,39 +100,42 @@ ul {
   box-shadow:         0px 2px 6px 3px #ccc;
 }
 
-blockquote {
-  color: $grey;
-  font-style: oblique;
-  font-size: 1em;
-  padding: 0 1em;
-  margin-bottom: 32px;
+.quote {
+  line-height: normal;
+}
+
+.profile-lead {
+  display: none;
+  height: 0;
 }
 
 .profile-show {
-  background: url(../images/placeholder_shaded.png) top center no-repeat;
+  background: url(../images/placeholder_shaded.png) center top no-repeat;
   background-size: cover;
   border-radius: 0;
   height: 200px;
   display: flex;
   vertical-align: middle;
+  margin-bottom: 0;
 }
 
 .display-5 {
   color: white;
   margin: auto;
   text-align: center;
+  width: 100%;
 }
 
 .color-block {
-  padding: 2em 1em;
-  background-color: whitesmoke;
+  padding: 1.5em;
+  @include gradient-vertical-three-colors;
   margin-bottom: 2em;
-  max-width: 400px;
+  max-width: 575px;
 }
 
 .profile-label {
   font-size: .5em;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0;
   color: $dkgrey;
 }
@@ -122,6 +147,15 @@ blockquote {
 
 .body-all {
   margin-bottom: 2em;
+  color: $grey;
+  h5 {
+    padding-top: 1em;
+  }
+}
+
+.lead {
+  color: white;
+  text-align: center;
 }
 
 .profile-details-block {
@@ -132,22 +166,50 @@ blockquote {
 }
 
 @media screen and (min-width: 480px) {
-  blockquote {
-    display: none;
+  .color-block {
+    border-radius: 10px;
+  }
+  .body-all {
+    padding-left: 2em;
+  }
+  .profile-show {
+    margin-bottom: 2em;
   }
 }
 
 .contact-info {
   h4 {
-    padding-bottom: 2em;
+    padding-bottom: 1em;
   }
   background-color: #252429;
-  padding: 1em;
+  padding: 2em 2em;
   color: white;
   .link {
     color: $blue;
   }
+  @include border-radius(0px 10px 0px 0px);
+  .profile-label {
+    color: white;
+  }
 }
+
+.contact-image {
+  background: url(../images/founders.jpeg) center top no-repeat;
+  background-size: cover;
+  @include border-radius(10px 0px 0px 0px);
+  height: auto;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 575px) {
+  .profile-show {
+    margin-bottom: 0;
+  }
+  .contact-info {
+    @include border-radius(0px 0px 0px 0px);
+  }
+}
+
 
 // .tiles {
 //   flex-direction: column;
