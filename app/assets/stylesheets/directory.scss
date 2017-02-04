@@ -1,0 +1,42 @@
+.directory {
+  // @include gradient-vertical-three-colors(#F2F2F2, #F7F7F7, 50%, #E5E5E5);
+  background-color: #f7f7f7;
+  border-top: 2px solid $grey;
+  hr {
+    border-color: $dkgrey;
+  }
+}
+
+.profile-list {
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 1em 0;
+  border-bottom: .5px solid $grey;
+  a {
+    color: $dkgrey;
+    opacity: .7;
+    font-weight: bolder;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    background-color: white;
+    a {
+      opacity: 1;
+    }
+  }
+  .avatar {
+    max-width: 100px;
+    padding: 0 1em;
+  }
+}
+
+.directory-container {
+  background-color: #E5E5E5;
+  h3 {
+    padding: 1em;
+    margin-bottom: 0em;
+    // color: white;
+  }
+}

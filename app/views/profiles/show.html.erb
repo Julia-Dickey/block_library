@@ -6,7 +6,7 @@
   <h1 class="display-5"><%= @profile.company %></h1>
 </div>
 
-<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; <span class="edit-button">Edit</span>'.html_safe, edit_profile_path(@profile), :class => "btn btn-primary floating-button" %>
+<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; <span class="edit-button">Edit</span>'.html_safe, edit_profile_path(@profile), :class => "btn btn-primary edit-float floating-button" %>
 
 <!-- <button type="button" name="button" class="btn btn-primary floating-button"><i class="fa fa-pencil" aria-hidden="true"></i>
  </button> -->
@@ -46,7 +46,7 @@
         <%= @profile.exit %></p>
       <p class="profile-label">WEBSITE:</p>
       <i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;
-      <%= link_to @profile.website, :target => "_blank" %>
+      <%= link_to @profile.website, :target => "_blank", :class => "link" %>
     </div>
     <div class="col-sm-7 body-all">
       <h3 class="quote">"<%= @profile.overview %>"</h3>
@@ -57,7 +57,6 @@
   </div>
 </div>
 
-<!-- <img class="" src="../images/founders.jpeg" alt="Red Duck ketchup founders"> -->
 <div class="container">
   <div class="row">
     <div class="col-sm-7 contact-image">
