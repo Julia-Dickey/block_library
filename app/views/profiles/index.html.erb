@@ -11,6 +11,70 @@
       <% end %>
     </div>
   </div>
+
+</div>
+
+<div class="container">
+
+  <div class="card-group text-center">
+    <% if @profiles.any? %>
+      <div class="row">
+        <% @profiles.each do |profile| %>
+          <div class="col-sm-4">
+            <div class="card card-profile">
+              <img class="card-img-top" style="background-image: url(../images/profile_preview.png); height: 300px; width: auto" alt="">
+              <div class="card-block text-xs-centered">
+                <% if profile.status === "Survive" %>
+                  <img class="card-profile-img rounded-circle" src="../images/starve_ups_stage-01.png" style="width: 100px; margin-top: -4rem">
+                <% elsif profile.status === "Strive" %>
+                  <img class="card-profile-img rounded-circle" src="../images/starve_ups_stage-02.png" style="width: 100px; margin-top: -4rem">
+                <% elsif profile.status == "Thrive" %>
+                  <img class="card-profile-img rounded-circle" src="../images/starve_ups_stage-03.png" style="width: 100px; margin-top: -4rem">
+                <% end %>
+                <h5 class="card-title"><%= link_to profile.company, profile_path(profile) %></h5>
+                <p class="card-text"><%= profile.industry %></p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+<!-- <div class="mt-2">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card card-profile">
+        <div class="card-header" style="background-image: url(../images/placeholder_shaded.png); height: 180px; width: 100%"></div>
+        <div class="card-block text-xs-center">
+          <img class="card-profile-img rounded-image" src="../images/founders.jpeg" style: "rou">
+          <h5 class="card-title">Jacob Thornton</h5>
+          <p class="mb-4">Big belly rude boy, million dollar hustler. Unemployed.</p>
+          <button class="btn btn-outline-primary btn-sm">
+            <span class="icon icon-add-user"></span> Follow
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card card-profile">
+        <div class="card-header" style="background-image: url(https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11240760_365538423656311_112029877_n.jpg);"></div>
+        <div class="card-block text-xs-center">
+          <img class="card-profile-img" src="../assets/img/avatar-mdo.png">
+          <h5 class="card-title">Mark Otto</h5>
+          <p class="mb-4">GitHub and Bootstrap. Formerly at Twitter. Huge nerd.</p>
+          <button class="btn btn-outline-primary btn-sm">
+            <span class="icon icon-add-user"></span> Follow
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
   <!-- <div class="modal fade" id="new-profile-modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -25,5 +89,3 @@
       </div>
     </div>
   </div> -->
-
-</div>

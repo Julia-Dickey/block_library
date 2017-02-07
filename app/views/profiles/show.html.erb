@@ -8,12 +8,10 @@
 
 <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; <span class="edit-button">Edit</span>'.html_safe, edit_profile_path(@profile), :class => "btn btn-primary edit-float floating-button" %>
 
-<!-- <button type="button" name="button" class="btn btn-primary floating-button"><i class="fa fa-pencil" aria-hidden="true"></i>
- </button> -->
 <div class="container">
   <div class="row">
     <div class="col-sm-5 color-block">
-      <h5><%= @profile.company%> at a Glance</h5>
+      <h5><%= @profile.company %> at a Glance</h5>
       <div class="row profile-details-block">
         <div class="col">
           <p class="profile-label">INDUSTRY:</p>
