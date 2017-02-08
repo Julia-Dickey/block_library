@@ -3,14 +3,14 @@
   <%= link_to '< Member Directory', profiles_path %>
 </div> -->
 <div class="jumbotron jumbotron-fluid d-flex align-items-center profile-show" style="height: 20rem">
-  <h1 class="display-5 text-white"><%= @profile.company %></h1>
+  <h1 class="display-5 text-white mx-auto"><%= @profile.company %></h1>
 </div>
 
-<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> <span>&nbsp; &nbsp;Edit </span>'.html_safe, edit_profile_path(@profile), :class => "btn rounded-left btn-primary edit-float floating-button text-white" %>
+<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> <span>&nbsp; &nbsp;Edit </span>'.html_safe, edit_profile_path(@profile), :class => "btn rounded-left btn-primary edit-float floating-button text-white", :style => "z-index: 1" %>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-5 text-muted p-4 color-block" style="max-height: 520px">
+    <div class="col-sm-5 text-muted p-4 color-block rounded" style="max-height: 520px">
       <h5 class="mb-4"><%= @profile.company %> at a Glance</h5>
       <div class="row d-flex justify-content-between">
         <div class="col">
@@ -46,29 +46,31 @@
       <p class="mb-0" style="font-size: .5rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
       <%= link_to @profile.website, :target => "_blank", :class => "" %>
     </div>
-    <div class="col-sm-7 body-all">
-      <h3 class="quote">"<%= @profile.overview %>"</h3>
+
+    <div class="col-sm-7 text-muted">
+      <p class="display-4 my-4" style="font-size: 2rem; line-height: 1.25">"<%= @profile.overview %>"</p>
       <hr>
-      <h5>About <%=@profile.company%></h5>
-      <p class=><%=@profile.body%></p>
+      <h5 class="pt-4">About <%=@profile.company%></h5>
+      <p style="max-width: 800px"><%=@profile.body%></p>
     </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-7 contact-image">
+    <div class="col-sm-7 rounded-top contact-image">
     </div>
     <div class="col-sm-5 contact-info">
       <h4>WE'D LOVE TO HEAR FROM YOU</h4>
-      <p><%= @profile.company %><br/>
-      <span class="link">info@profile.com</span><br/>
-      <span class="link"><%= @profile.website %></span></p>
-      <br/>
-      <p class="profile-label">FOUNDED BY:</p>
-      <p>Founder's Name<br/>
+      <p><strong><%= @profile.company %></strong><br/>
+      <a href="#"><%= @profile.website %></a> <br/>
+      <a href="#">info@profile.com</a>
+
+      <p><strong>Founded by:</strong><br/>
+      Founder's Name<br/>
       1(503)321-5432<br/>
-      <span class="link">email@founder.com</span></p>
+      <a href="#">email@founder.com</a>
+      </p>
     </div>
   </div>
 </div>

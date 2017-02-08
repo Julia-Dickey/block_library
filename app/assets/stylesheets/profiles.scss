@@ -27,10 +27,10 @@ $blue: #4A89FF;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
 }
 
-img {
-  width: 20em;
-  height: auto;
-}
+// img {
+//   width: 20em;
+//   height: auto;
+// }
 
 .background {
   border-radius: 4px;
@@ -103,31 +103,31 @@ img {
   top: 19rem;
 }
 
-.shadow {
-  -moz-box-shadow:    0px 2px 6px 3px #ccc;
-  -webkit-box-shadow: 0px 2px 6px 3px #ccc;
-  box-shadow:         0px 2px 6px 3px #ccc;
-}
+// .shadow {
+//   -moz-box-shadow:    0px 2px 6px 3px #ccc;
+//   -webkit-box-shadow: 0px 2px 6px 3px #ccc;
+//   box-shadow:         0px 2px 6px 3px #ccc;
+// }
 
-.quote {
-  line-height: normal;
-}
+// .quote {
+//   line-height: normal;
+// }
 
-.profile-lead {
-  display: none;
-  height: 0;
-}
+// .profile-lead {
+//   display: none;
+//   height: 0;
+// }
 
 .profile-show {
   background: url(../images/placeholder_shaded.png) center top no-repeat;
 }
 
-.display-5 {
-  color: white;
-  margin: auto;
-  text-align: center;
-  width: 100%;
-}
+// .display-5 {
+//   color: white;
+//   margin: auto;
+//   text-align: center;
+//   width: 100%;
+// }
 
 .color-block {
   // padding: 1.5em;
@@ -135,13 +135,13 @@ img {
   // margin-bottom: 2em;
   // max-height: 520px;
 }
-
-.profile-label {
-  font-size: .5em;
-  font-weight: 600;
-  margin-bottom: 0;
-  color: $dkgrey;
-}
+//
+// .profile-label {
+//   font-size: .5em;
+//   font-weight: 600;
+//   margin-bottom: 0;
+//   color: $dkgrey;
+// }
 
 .body {
   // color: $dkgrey;
@@ -149,19 +149,19 @@ img {
 }
 
 .body-all {
-  margin-bottom: 2em;
-  line-height: 1.5;
-  color: $grey;
-  max-width: 800px;
-  h5 {
-    padding-top: 1em;
-  }
+  // margin-bottom: 2em;
+  // line-height: 1.5;
+  // color: $grey;
+  // max-width: 800px;
+  // h5 {
+  //   padding-top: 1em;
+  // }
 }
-
-.lead {
-  color: white;
-  text-align: center;
-}
+//
+// .lead {
+//   color: white;
+//   text-align: center;
+// }
 
 // .profile-details-block {
   // justify-content: space-between;
@@ -171,15 +171,15 @@ img {
 // }
 
 @media screen and (min-width: 480px) {
-  .color-block {
-    border-radius: 10px;
-  }
-  .body-all {
-    padding-left: 2em;
-  }
-  .profile-show {
-    margin-bottom: 2em;
-  }
+  // .color-block {
+  //   border-radius: 10px;
+  // }
+  // .body-all {
+  //   padding-left: 2em;
+  // }
+  // .profile-show {
+  //   margin-bottom: 2em;
+  // }
 }
 
 .contact-info {
@@ -220,10 +220,10 @@ a {
 
 .contact-image {
   background: url(../images/founders.jpeg) center top no-repeat;
-  background-size: cover;
-  @include border-radius(10px 0px 0px 0px);
-  height: auto;
-  margin-bottom: 0;
+  // background-size: cover;
+  // @include border-radius(10px 0px 0px 0px);
+  // height: auto;
+  // margin-bottom: 0;
 }
 
 @media screen and (max-width: 575px) {
