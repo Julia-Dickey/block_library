@@ -2,49 +2,49 @@
 <!-- <div class="container">
   <%= link_to '< Member Directory', profiles_path %>
 </div> -->
-<div class="jumbotron profile-show">
-  <h1 class="display-5"><%= @profile.company %></h1>
+<div class="jumbotron jumbotron-fluid d-flex align-items-center profile-show" style="height: 20rem">
+  <h1 class="display-5 text-white"><%= @profile.company %></h1>
 </div>
 
-<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; <span class="edit-button">Edit</span>'.html_safe, edit_profile_path(@profile), :class => "btn btn-primary edit-float floating-button" %>
+<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> <span>&nbsp; &nbsp;Edit </span>'.html_safe, edit_profile_path(@profile), :class => "btn rounded-left btn-primary edit-float floating-button text-white" %>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-5 color-block">
-      <h5><%= @profile.company %> at a Glance</h5>
-      <div class="row profile-details-block">
+    <div class="col-sm-5 text-muted p-4 color-block" style="max-height: 520px">
+      <h5 class="mb-4"><%= @profile.company %> at a Glance</h5>
+      <div class="row d-flex justify-content-between">
         <div class="col">
-          <p class="profile-label">INDUSTRY:</p>
-          <p class="body"><i class="fa fa-area-chart" aria-hidden="true"></i>
+          <p class="mb-0" style="font-size: .5rem"><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
+          <p class="mb-3">
             <%= @profile.industry %></p>
         </div>
         <div class="col">
-          <p class="profile-label">MEMBER STATUS</p>
-          <p class="body"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<%= @profile.status %></p>
+          <p class="mb-0" style="font-size: .5rem"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<strong>MEMBER STATUS</strong></p>
+          <p class="mb-3"><%= @profile.status %></p>
         </div>
       </div>
-      <div class="row profile-details-block">
+      <div class="row d-flex justify-content-between">
         <div class="col">
-          <p class="profile-label">FOUNDED:</p>
-          <p class="body"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <%= @profile.founded %></p>
+          <p class="mb-0" style="font-size: .5rem"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <strong>FOUNDED:</strong></p>
+          <p class="mb-3"><%= @profile.founded %></p>
         </div>
         <div class="col">
-          <p class="profile-label">MEMBER SINCE:</p>
-          <p class="body"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <%= @profile.membersince %> </p>
+          <p class="mb-0" style="font-size: .5rem"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>MEMBER SINCE:</strong></p>
+          <p class="mb-3"> <%= @profile.membersince %></p>
         </div>
       </div>
-      <p class="profile-label">FUNDING SOURCES:</p>
-      <p class="body"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;
-      <%= @profile.funding %></p>
-      <p class="profile-label">BUSINESS STRATEGY:</p>
-      <p class="body"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;
-        <%= @profile.strategy %></p>
-      <p class="profile-label">EXIT STRATEGY:</p>
-      <p class="body"><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;
+
+      <p class="mb-0" style="font-size: .5rem"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<strong>FUNDING SOURCES:</strong></p>
+      <p class="mb-3"><%= @profile.funding %></p>
+
+      <p class="mb-0" style="font-size: .5rem"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;<strong>BUSINESS STRATEGY:</strong></p>
+      <p class="mb-3"><%= @profile.strategy %></p>
+
+      <p class="mb-0" style="font-size: .5rem"><strong><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;EXIT STRATEGY:</strong></p>
+      <p class="body">
         <%= @profile.exit %></p>
-      <p class="profile-label">WEBSITE:</p>
-      <i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;
-      <%= link_to @profile.website, :target => "_blank", :class => "link" %>
+      <p class="mb-0" style="font-size: .5rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
+      <%= link_to @profile.website, :target => "_blank", :class => "" %>
     </div>
     <div class="col-sm-7 body-all">
       <h3 class="quote">"<%= @profile.overview %>"</h3>

@@ -58,42 +58,39 @@ img {
   padding: 1em 2em;
 }
 
-h3 {
-  font-size: 2em;
-  color: $grey;
-  margin-bottom: 1em;
-  font-weight: lighter;
-  letter-spacing: 1px;
-}
+// h3 {
+//   font-size: 2em;
+//   color: $grey;
+//   margin-bottom: 1em;
+//   font-weight: lighter;
+//   letter-spacing: 1px;
+// }
 
-h5 {
-  color: $dkgrey;
-  margin-bottom: 1em;
-}
+// h5 {
+  // color: $dkgrey;
+  // margin-bottom: 1em;
+// }
 
-ul {
-  list-style: none;
-  padding-left: 0;
-}
+// ul {
+//   list-style: none;
+//   padding-left: 0;
+// }
 
 
 
 
 
 .floating-button {
-  border-radius: 6px;
+  // border-radius: 6px;
   position: fixed;
-  z-index: 1;
-  .edit-button {
-    color: transparent;
-  }
-  @include border-radius(10px 0px 0px 10px);
-  opacity: .95;
+  // z-index: 1;
+  // .edit-button {
+  //   color: transparent;
+  // }
+  // @include border-radius(10px 0px 0px 10px);
+  // opacity: .95;
   &:hover {
     right: 0;
-    .edit-button {
-      color: white;
-    }
   }
 }
 .add-float {
@@ -102,8 +99,8 @@ ul {
 }
 
 .edit-float {
-  right: -40px;
-  top: 11em;
+  right: -45px;
+  top: 19rem;
 }
 
 .shadow {
@@ -123,12 +120,6 @@ ul {
 
 .profile-show {
   background: url(../images/placeholder_shaded.png) center top no-repeat;
-  background-size: cover;
-  border-radius: 0;
-  height: 200px;
-  display: flex;
-  vertical-align: middle;
-  margin-bottom: 0;
 }
 
 .display-5 {
@@ -139,10 +130,10 @@ ul {
 }
 
 .color-block {
-  padding: 1.5em;
+  // padding: 1.5em;
   @include gradient-vertical-three-colors(#F2F2F2, #F7F7F7, 50%, #E5E5E5);
-  margin-bottom: 2em;
-  max-height: 520px;
+  // margin-bottom: 2em;
+  // max-height: 520px;
 }
 
 .profile-label {
@@ -153,8 +144,8 @@ ul {
 }
 
 .body {
-  color: $dkgrey;
-  margin-bottom: 1em;
+  // color: $dkgrey;
+  // margin-bottom: 1em;
 }
 
 .body-all {
@@ -172,12 +163,12 @@ ul {
   text-align: center;
 }
 
-.profile-details-block {
-  justify-content: space-between;
-  .col {
-    width: 100px;
-  }
-}
+// .profile-details-block {
+  // justify-content: space-between;
+  // .col {
+  //   width: 100px;
+  // }
+// }
 
 @media screen and (min-width: 480px) {
   .color-block {
