@@ -81,14 +81,7 @@ $blue: #4A89FF;
 
 
 .floating-button {
-  // border-radius: 6px;
   position: fixed;
-  // z-index: 1;
-  // .edit-button {
-  //   color: transparent;
-  // }
-  // @include border-radius(10px 0px 0px 10px);
-  // opacity: .95;
   &:hover {
     right: 0;
   }

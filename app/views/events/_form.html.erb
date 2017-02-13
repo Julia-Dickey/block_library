@@ -2,16 +2,16 @@
 
   <%= form_for @event, remote: true do |f| %>
 
-    <div class="field form-group">
-      <%= f.label :title, "Event title" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :title, "Event title", style:"font-size: .75em" %>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :body, "Description" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :body, "Description", style:"font-size: .75em" %>
       <%= f.text_area :body, :class => "form-control" %>
     </div>
-    <!-- <div class="field form-group">
+    <!-- <div class="field form-group text-uppercase">
       <%= f.label :allDay, "Is this an all day event?" %>
       <%= f.radio_button :allDay, false %>
       <%= f.label :allDay_no, 'No' %>
@@ -19,27 +19,31 @@
       <%= f.label :allDay_yes, 'Yes' %><br>
     </div> -->
 
-    <div class="field form-group">
-      <%= f.label :start, 'Begins' %>
-      <%= f.datetime_field :start, class: "form-control date-fields" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :start, 'Begins', style:"font-size: .75em" %>
+      <input value="" type="text" id="datepicker" class="date-fields">
+      <!-- <%= f.datetime_field :start, class: "form-control date-fields" %> -->
     </div>
-    <div class="field form-group">
-      <%= f.label :end, 'Ends' %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :end, 'Ends', style:"font-size: .75em" %>
       <%= f.datetime_field :end, class: "form-control date-fields" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :color, 'Color' %>
-      <%= f.text_field :color, class: "form-control date-fields" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :color, 'Color', style:"font-size: .75em" %><br/>
+      <!-- <%= f.color_field :color, class: "form-control color-field" %> -->
+      <input type="color" name="" value="">
     </div>
 
     <div class="actions form-inline modal-footer">
       <%= f.submit class: 'btn btn-outline-success' %>
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-      <!-- <button type="button" class="btn btn-outline-default">Cancel</button> -->
     </div>
 
   <% end %>
 
+  <script>
+    $(function() {
+      $( "#datepicker" ).datepicker();
+    });
+  </script>
 </div>

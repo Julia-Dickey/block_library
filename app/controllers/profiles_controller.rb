@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.order('company ASC')
+    @profile = Profile.new
 
   end
 

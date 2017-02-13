@@ -1,42 +1,108 @@
-$grey: #999;
+$grey: #636c72;
+$mdgrey: #C0C0C0;
+$ltgrey: #f7f7f7;
+$blue: #3a87ad;
 
 form, table {
   color: $grey;
+}
+
+.grey {
+  color: $grey;
+  a {
+    color: $grey;
+  }
+}
+
+.fc-button:focus {
+  outline: 0;
+  // background-color: whitesmoke;
+}
+
+.fc-next-button, .fc-prev-button {
+  border: 0;
+  text-shadow: none;
+  margin-top: 3rem;
+}
+.fc-center {
+  text-align: center;
+}
+.fc-right {
+  border: 0;
+  text-shadow: none;
+}
+
+.event-date {
+  color: $mdgrey;
+  font-weight: lighter;
+  font-size: 6rem;
+}
+.event-desc {
+  font-weight: lighter;
+}
+.add-event-float {
+  border-radius: 6px 0px 0px 6px;
+  position: absolute;
+  top: 1.5rem;
+  right: -58px;
+  height: 2rem;
+  line-height: 1;
+  z-index: 1031;
+  position: fixed;
+  &:hover {
+    right: 0;
+  }
 }
 
 .col-sm-9 {
   margin: 40px auto;
 }
 
+.color-field {
+  height: 10px;
+	width: 32px;
+	height: 32px;
+}
+
+input[type="color"] {
+  width: 50px;
+  height: 50px;
+}
 .modal-title {
   color: $grey;
 }
 
-.date-fields {
-  width: 100%;
-}
+// .date-fields {
+//   width: 100%;
+// }
 
 .calendar {
-  max-width: 600px;
-  margin: 2em auto;
-  color: $grey;
+  .fc-button {
+    height: 2rem;
+  }
   .fc-center h2 {
-    font-size: 2em;
+    font-weight: 200;
+    text-align: center;
   }
   th.fc-day-header.fc-widget-header, .fc-center {
-    font-variant: small-caps;
-    font-size: .75em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: lighter;
   }
-  td.fc-day-top {
-    text-align: center;
-    padding: auto;
+
+  .fc-row .fc-widget-header {
+    height: 2rem;
   }
+
+  .fc-sun, .fc-mon, .fc-tue, .fc-wed, .fc-thu, .fc-fri, .fc-sat {
+    padding-top: .5rem;
+  }
+
   .fc-past {
-    background: whitesmoke;
+    background: $ltgrey;
   }
   .fc-day-number {
-    padding: .25em .5em 0 0;
+    padding: .25rem .5rem 0 0;
     font-weight: lighter;
   }
   .fc-widget-content {
@@ -44,36 +110,48 @@ form, table {
   }
   button {
     .fc-state-down, .fc-state-active {
-      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+      box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.15), 0 0px 0px rgba(0, 0, 0, 0.05);
       background: $grey !important;
     }
     .fc-state-default {
-      text-shadow: 0 0 0 rgba(0, 0, 0, .7);
       .fc-icon.fc-icon-right-single-arrow {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: .6em;
+        font-size: .5rem;
         font-weight: lighter;
       }
     }
     background: #fff !important;
     color: $grey;
-    font-size: .75em;
+    font-size: 1rem;
     }
   }
+
+  a.fc-more {
+    background-color: $blue;
+    padding: .25rem 0 .25rem .25rem;
+    color: white !important;
+    padding-right: .5rem;
+    font-size: .75rem;
+  }
+  a.fc-day-grid-event {
+    border-radius: 0;
+    padding: .25rem 0 .25rem .25rem;
+  }
 .fc-content {
+  border-radius: 0;
   .fc-title, .fc-time {
     color: white;
-    font-size: .75em;
+    font-size: .75rem;
   }
 }
-
-@media screen and (min-width:401px) {
-  .event-list {
-    display: none;
+@media screen and (max-width: 700px) {
+  .add-event-float {
+    top: 31rem;
   }
+
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .calendar {
     margin: 1em auto;
     .fc-basic-view {
@@ -88,12 +166,22 @@ form, table {
       display: none;
     }
     div.fc-center h2 {
-      padding-top: 1em;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .fc-next-button {
+      margin-left: 0 !important;
+    }
+    .fc-right .fc-button-group {
+      display: none;
     }
     th.fc-day-header.fc-widget-header {
       font-variant: small-caps;
       font-weight: lighter;
       font-size: .75em;
+    }
+    .fc-sun, .fc-mon, .fc-tue, .fc-wed, .fc-thu, .fc-fri, .fc-sat {
+      padding-top: 1rem;
     }
     .fc-day-number {
       padding: 0;

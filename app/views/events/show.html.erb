@@ -1,10 +1,17 @@
-<div class="container-fluid">
-  <p id="notice"><%= notice %></p>
+<div class="container-fluid text-muted">
+  <div class="row d-flex justify-content-end mx-1 my-3">
+    <a href="/events"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
+  </div>
 
-  <p>
-    <strong>Title:</strong>
+  <h4 class="display-4">
     <%= @event.title %>
-  </p>
+  </h4>
+  <p><%= @event.start %></p>
+  <% if @event.exclusive %>
+    <p><small>MEMBERS ONLY</small></p>
+  <% else %>
+  <p><small>PUBLIC EVENT</small></p>
+  <% end %>
 
   <p>
     <strong>Body:</strong>
