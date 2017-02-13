@@ -1,4 +1,4 @@
-<div class="form_new">
+<div class="form_new text-muted">
 
   <%= form_for @event, remote: true do |f| %>
 
@@ -8,31 +8,57 @@
     </div>
 
     <div class="field form-group text-uppercase">
-      <%= f.label :body, "Description", style:"font-size: .75em" %>
-      <%= f.text_area :body, :class => "form-control" %>
+      <%= f.radio_button :exclusive, true %>
+      <%= f.label :exclusive, "&nbsp; Members Only".html_safe, style:"font-size: .75em" %><br/>
+      <%= f.radio_button :exclusive, false %>
+      <%= f.label :exclusive, "&nbsp; Public Event".html_safe, style:"font-size: .75em" %>
     </div>
+
+    <div class="form-group">
+      <!-- <%= f.label :start, 'Begins', class:"text-uppercase", style:"font-size: .75em" %> -->
+      <label for=""class="text-uppercase" style="font-size: .75em">Starts</label>
+      <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control text-uppercase"/>
+        <span class="input-group-addon">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for=""class="text-uppercase" style="font-size: .75em">Ends</label>
+      <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control text-uppercase" style="font-size: .75em" />
+        <span class="input-group-addon">
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+
     <!-- <div class="field form-group text-uppercase">
-      <%= f.label :allDay, "Is this an all day event?" %>
-      <%= f.radio_button :allDay, false %>
-      <%= f.label :allDay_no, 'No' %>
-      <%= f.radio_button :allDay, true %>
-      <%= f.label :allDay_yes, 'Yes' %><br>
+      <%= f.label :start, 'Begins', style:"font-size: .75em" %>
+      <input value="" type="text" id="datepicker" class="date-fields"> -->
+      <!-- <%= f.datetime_field :start, class: "form-control date-fields" %> -->
+    <!-- </div> -->
+
+
+
+
+
+    <!-- <div class="field form-group text-uppercase">
+      <%= f.label :end, 'Ends', style:"font-size: .75em" %>
+      <%= f.datetime_field :end, class: "form-control date-fields" %>
     </div> -->
 
     <div class="field form-group text-uppercase">
-      <%= f.label :start, 'Begins', style:"font-size: .75em" %>
-      <input value="" type="text" id="datepicker" class="date-fields">
-      <!-- <%= f.datetime_field :start, class: "form-control date-fields" %> -->
-    </div>
-    <div class="field form-group text-uppercase">
-      <%= f.label :end, 'Ends', style:"font-size: .75em" %>
-      <%= f.datetime_field :end, class: "form-control date-fields" %>
+      <%= f.label :body, "Description", style:"font-size: .75em" %>
+      <%= f.text_area :body, :class => "form-control", :style=>"height: 200px" %>
     </div>
 
     <div class="field form-group text-uppercase">
-      <%= f.label :color, 'Color', style:"font-size: .75em" %><br/>
+      <%= f.label :color, 'Select a background color', style:"font-size: .75em"%><br/>
       <!-- <%= f.color_field :color, class: "form-control color-field" %> -->
-      <input type="color" name="" value="">
+      <input type="color" class="form-control" name="" value="#3a87ad">
     </div>
 
     <div class="actions form-inline modal-footer">
@@ -40,10 +66,9 @@
     </div>
 
   <% end %>
-
-  <script>
-    $(function() {
-      $( "#datepicker" ).datepicker();
+  <script type="text/javascript">
+    $(function () {
+      $('#datetimepicker1').datetimepicker();
     });
   </script>
 </div>

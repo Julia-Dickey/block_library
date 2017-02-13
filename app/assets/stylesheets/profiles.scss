@@ -49,36 +49,13 @@ $blue: #4A89FF;
 }
 
 .form-control{
-  border: 0px solid white;
-  border-radius: 0px;
-  border-bottom: .5px solid grey;
+  border: .5px solid whitesmoke;
+  border-radius: 10px;
 }
 
 .form-group {
-  padding: 1em 2em;
+  padding: 0 1em;
 }
-
-// h3 {
-//   font-size: 2em;
-//   color: $grey;
-//   margin-bottom: 1em;
-//   font-weight: lighter;
-//   letter-spacing: 1px;
-// }
-
-// h5 {
-  // color: $dkgrey;
-  // margin-bottom: 1em;
-// }
-
-// ul {
-//   list-style: none;
-//   padding-left: 0;
-// }
-
-
-
-
 
 .floating-button {
   position: fixed;
@@ -115,77 +92,9 @@ $blue: #4A89FF;
   background: url(../images/placeholder_shaded.png) center top no-repeat;
 }
 
-// .display-5 {
-//   color: white;
-//   margin: auto;
-//   text-align: center;
-//   width: 100%;
-// }
-
 .color-block {
-  // padding: 1.5em;
   @include gradient-vertical-three-colors(#F2F2F2, #F7F7F7, 50%, #E5E5E5);
-  // margin-bottom: 2em;
-  // max-height: 520px;
-}
-//
-// .profile-label {
-//   font-size: .5em;
-//   font-weight: 600;
-//   margin-bottom: 0;
-//   color: $dkgrey;
-// }
-
-.body {
-  // color: $dkgrey;
-  // margin-bottom: 1em;
-}
-
-.body-all {
-  // margin-bottom: 2em;
-  // line-height: 1.5;
-  // color: $grey;
-  // max-width: 800px;
-  // h5 {
-  //   padding-top: 1em;
-  // }
-}
-//
-// .lead {
-//   color: white;
-//   text-align: center;
-// }
-
-// .profile-details-block {
-  // justify-content: space-between;
-  // .col {
-  //   width: 100px;
-  // }
-// }
-
-@media screen and (min-width: 480px) {
-  // .color-block {
-  //   border-radius: 10px;
-  // }
-  // .body-all {
-  //   padding-left: 2em;
-  // }
-  // .profile-show {
-  //   margin-bottom: 2em;
-  // }
-}
-
-.contact-info {
-  h4 {
-    padding-bottom: 1em;
-  }
-  background-color: #252429;
-  padding: 2em 2em;
-  color: white;
-  @include border-radius(0px 10px 0px 0px);
-  .profile-label {
-    color: white;
-  }
+  border-radius: 15px;
 }
 
 
@@ -213,18 +122,24 @@ a {
 
 .contact-image {
   background: url(../images/founders.jpeg) center top no-repeat;
-  // background-size: cover;
-  // @include border-radius(10px 0px 0px 0px);
-  // height: auto;
-  // margin-bottom: 0;
+}
+
+
+@media screen and (min-width: 575px) {
+  .contact-info {
+    border-radius: 0 15px 0 0;
+  }
+  .contact-image {
+    border-radius: 15px 0 0 0
+  }
 }
 
 @media screen and (max-width: 575px) {
   .profile-show {
     margin-bottom: 0;
   }
-  .contact-info {
-    @include border-radius(0px 0px 0px 0px);
+  .contact-info, .contact-image, .color-block {
+    border-radius: 0px 0px 0px 0px;
   }
 }
 

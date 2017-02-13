@@ -10,40 +10,40 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-5 text-muted p-4 color-block rounded" style="max-height: 520px">
+    <div class="col-sm-5 text-muted p-4 mb-4 color-block" style="max-height: 520px">
       <h5 class="mb-4"><%= @profile.company %> at a Glance</h5>
       <div class="row d-flex justify-content-between">
         <div class="col">
-          <p class="mb-0" style="font-size: .5rem"><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
+          <p class="mb-0" style="font-size: .65rem"><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
           <p class="mb-3">
             <%= @profile.industry %></p>
         </div>
         <div class="col">
-          <p class="mb-0" style="font-size: .5rem"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<strong>MEMBER STATUS</strong></p>
+          <p class="mb-0" style="font-size: .65rem"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<strong>MEMBER STATUS</strong></p>
           <p class="mb-3"><%= @profile.status %></p>
         </div>
       </div>
       <div class="row d-flex justify-content-between">
         <div class="col">
-          <p class="mb-0" style="font-size: .5rem"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <strong>FOUNDED:</strong></p>
+          <p class="mb-0" style="font-size: .65rem"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <strong>FOUNDED:</strong></p>
           <p class="mb-3"><%= @profile.founded %></p>
         </div>
         <div class="col">
-          <p class="mb-0" style="font-size: .5rem"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>MEMBER SINCE:</strong></p>
+          <p class="mb-0" style="font-size: .65rem"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>MEMBER SINCE:</strong></p>
           <p class="mb-3"> <%= @profile.membersince %></p>
         </div>
       </div>
 
-      <p class="mb-0" style="font-size: .5rem"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<strong>FUNDING SOURCES:</strong></p>
+      <p class="mb-0" style="font-size: .65rem"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<strong>FUNDING SOURCES:</strong></p>
       <p class="mb-3"><%= @profile.funding %></p>
 
-      <p class="mb-0" style="font-size: .5rem"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;<strong>BUSINESS STRATEGY:</strong></p>
+      <p class="mb-0" style="font-size: .65rem"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;<strong>BUSINESS STRATEGY:</strong></p>
       <p class="mb-3"><%= @profile.strategy %></p>
 
-      <p class="mb-0" style="font-size: .5rem"><strong><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;EXIT STRATEGY:</strong></p>
+      <p class="mb-0" style="font-size: .65rem"><strong><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;EXIT STRATEGY:</strong></p>
       <p class="body">
         <%= @profile.exit %></p>
-      <p class="mb-0" style="font-size: .5rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
+      <p class="mb-0" style="font-size: .65rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
       <%= link_to @profile.website, :target => "_blank", :class => "" %>
     </div>
 
@@ -56,12 +56,12 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mt-4">
   <div class="row">
-    <div class="col-sm-7 rounded-top contact-image">
+    <div class="col-sm-7 contact-image">
     </div>
-    <div class="col-sm-5 contact-info">
-      <h4>WE'D LOVE TO HEAR FROM YOU</h4>
+    <div class="col-sm-5 contact-info text-white py-4" style="background-color: #252429">
+      <h4 class="pb-4">WE'D LOVE TO HEAR FROM YOU</h4>
       <p><strong><%= @profile.company %></strong><br/>
       <a href="#"><%= @profile.website %></a> <br/>
       <a href="#">info@profile.com</a>

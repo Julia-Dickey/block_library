@@ -2,10 +2,24 @@ $grey: #636c72;
 $mdgrey: #C0C0C0;
 $ltgrey: #f7f7f7;
 $blue: #3a87ad;
+$action: #3a87ad;
 
 form, table {
   color: $grey;
 }
+
+
+.btn-outline-success {
+  border: 1px solid $action;
+  color: $action;
+  width: 100%;
+  &:hover {
+    background-color: $action;
+    color: white;
+    border: 1px solid $action;
+  }
+}
+
 
 .grey {
   color: $grey;
@@ -41,12 +55,11 @@ form, table {
   font-weight: lighter;
 }
 .add-event-float {
-  border-radius: 6px 0px 0px 6px;
   position: absolute;
   top: 1.5rem;
   right: -58px;
-  height: 2rem;
-  line-height: 1;
+  // height: 2rem;
+  // line-height: 1;
   z-index: 1031;
   position: fixed;
   &:hover {

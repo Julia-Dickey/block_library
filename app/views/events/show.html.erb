@@ -6,15 +6,17 @@
   <h4 class="display-4">
     <%= @event.title %>
   </h4>
-  <p><%= @event.start %></p>
+  <p class="mt-4"><%= @event.start %><br/>
   <% if @event.exclusive %>
-    <p><small>MEMBERS ONLY</small></p>
+    <strong>Members only</strong><br/>
   <% else %>
-  <p><small>PUBLIC EVENT</small></p>
+    <strong>Public event</strong><br/>
   <% end %>
+    <strong>Location: </strong>
+    <%= @event.location %>
+  </p>
 
-  <p>
-    <strong>Body:</strong>
+  <p><strong>Details:</strong><br/>
     <%= @event.body %>
   </p>
 

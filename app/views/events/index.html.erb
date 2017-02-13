@@ -1,7 +1,7 @@
 
 <div class="sc_block">
 
-  <%= link_to "+ &nbsp; Event".html_safe, new_event_path, { class: "btn btn-success add-event-float pb-1 text-white", id: "new-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-event-modal'} %>
+  <%= link_to "+ &nbsp; Event".html_safe, new_event_path, { class: "btn btn-success add-event-float text-white", style:"border-radius: 5px 0 0 5px", id: "new-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-event-modal'} %>
   <div class="container">
 
     <div class='calendar my-4' style="color: #636c72">
@@ -21,7 +21,6 @@
               <td class="d-flex align-items-start"><h1 class="event-date mr-4">12</h1></td>
               <td>
               <p class="text-muted event-desc py-3" style="line-height: 1.25"><strong><%= link_to event.title, event_path(event)%></strong><br/>
-              <%= event.body %><br/>
               <span class="text-uppercase"><small>5&mdash;6PM |
               <% if event.exclusive %>
               MEMBERS ONLY</small></span></p>

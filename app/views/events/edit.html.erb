@@ -1,6 +1,13 @@
-<h1>Editing Event</h1>
+<div class="container-fluid">
+  <div class="row d-flex justify-content-end mx-1 my-3">
+    <a href="/events"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
+  </div>
+    <h3 class="ml-2">Edit event details</h3>
 
-<%= render 'form', event: @event %>
+    <%= render 'form', event: @event %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+    <%= link_to 'Show', @event %> |
+    <%= link_to 'Back', events_path %>
+
+
+</div>

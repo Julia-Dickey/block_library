@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require moment
+//= require bootstrap-datetimepicker
 //= require fullcalendar
 //= require daterangepicker
 //= require_tree .
