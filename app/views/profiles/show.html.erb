@@ -3,64 +3,67 @@
   <%= link_to '< Member Directory', profiles_path %>
 </div> -->
 <div class="jumbotron jumbotron-fluid d-flex align-items-center profile-show" style="height: 20rem">
-  <h1 class="display-5 text-white mx-auto"><%= @profile.company %></h1>
+  <h1 class="display-2 text-white mx-auto"><%= @profile.company %></h1>
 </div>
 
-<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> <span>&nbsp; &nbsp;Edit </span>'.html_safe, edit_profile_path(@profile), :class => "btn rounded-left btn-info edit-float floating-button text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px" %>
+<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> <span>&nbsp; &nbsp;Edit </span>'.html_safe, edit_profile_path(@profile), :class => "btn rounded-left btn-info edit-float floating-button text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px", id: "edit-member", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#edit-member-modal' %>
+
+<%= link_to '<i class="fa fa-times" aria-hidden="true"></i>
+ <span>&nbsp; &nbsp;Delete </span>'.html_safe, profile_path(@profile), :class => "btn rounded-left btn-danger delete-float floating-button text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px", id: "delete-member", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#delete-member-modal' %>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-5 text-muted p-4 mb-4 color-block" style="max-height: 520px">
-      <h5 class="mb-4"><%= @profile.company %> at a Glance</h5>
+      <!-- <h5 class="mb-4"><%= @profile.company %> at a Glance</h5> -->
       <div class="row d-flex justify-content-between">
         <div class="col">
-          <p class="mb-0" style="font-size: .65rem"><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
+          <p class="mb-0 label" style="font-size: .65rem"><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
           <p class="mb-3">
             <%= @profile.industry %></p>
         </div>
         <div class="col">
-          <p class="mb-0" style="font-size: .65rem"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<strong>MEMBER STATUS</strong></p>
+          <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<strong>MEMBER STATUS</strong></p>
           <p class="mb-3"><%= @profile.status %></p>
         </div>
       </div>
       <div class="row d-flex justify-content-between">
         <div class="col">
-          <p class="mb-0" style="font-size: .65rem"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <strong>FOUNDED:</strong></p>
+          <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <strong>FOUNDED:</strong></p>
           <p class="mb-3"><%= @profile.founded %></p>
         </div>
         <div class="col">
-          <p class="mb-0" style="font-size: .65rem"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>MEMBER SINCE:</strong></p>
+          <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>MEMBER SINCE:</strong></p>
           <p class="mb-3"> <%= @profile.membersince %></p>
         </div>
       </div>
 
-      <p class="mb-0" style="font-size: .65rem"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<strong>FUNDING SOURCES:</strong></p>
+      <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<strong>FUNDING SOURCES:</strong></p>
       <p class="mb-3"><%= @profile.funding %></p>
 
-      <p class="mb-0" style="font-size: .65rem"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;<strong>BUSINESS STRATEGY:</strong></p>
+      <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;<strong>BUSINESS STRATEGY:</strong></p>
       <p class="mb-3"><%= @profile.strategy %></p>
 
-      <p class="mb-0" style="font-size: .65rem"><strong><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;EXIT STRATEGY:</strong></p>
+      <p class="mb-0 label" style="font-size: .65rem"><strong><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;EXIT STRATEGY:</strong></p>
       <p class="body">
         <%= @profile.exit %></p>
-      <p class="mb-0" style="font-size: .65rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
+      <p class="mb-0 label" style="font-size: .65rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
       <%= link_to @profile.website, :target => "_blank", :class => "" %>
     </div>
 
-    <div class="col-sm-7 text-muted px-4">
-      <p class="display-4 my-4" style="font-size: 2rem; line-height: 1.25">"<%= @profile.overview %>"</p>
+    <div class="col-sm-7 details text-muted px-4">
+      <p class="quote my-4" style="font-size: 2rem; line-height: 1.25">"<%= @profile.overview %>"</p>
       <hr>
-      <h5 class="pt-4">About <%=@profile.company%></h5>
-      <p style="max-width: 800px"><%=@profile.body%></p>
+      <h5 class="subhead pt-4" id="subhead">About <%=@profile.company%></h5>
+      <p class="body-copy" style="max-width: 800px"><%=@profile.body%></p>
     </div>
   </div>
 </div>
 
 <div class="container mt-4">
   <div class="row">
-    <div class="col-sm-7 contact-image">
+    <div class="col-sm-5 contact-image">
     </div>
-    <div class="col-sm-5 contact-info text-white py-4" style="background-color: #252429">
+    <div class="col-sm-7 contact-info text-white py-4 pl-4" style="background-color: #252429">
       <h4 class="pb-4">WE'D LOVE TO HEAR FROM YOU</h4>
       <p><strong><%= @profile.company %></strong><br/>
       <a href="#"><%= @profile.website %></a> <br/>
@@ -71,6 +74,37 @@
       1(503)321-5432<br/>
       <a href="#">email@founder.com</a>
       </p>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="edit-member-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit member details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="new-member-form">
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="delete-member-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="delete-member-form">
+        <h5>Are you sure you want to delete thi s member. You might miss them when they're gone. </h5>
+        <button class="btn btn-danger" type="button" name="button">Yup. Delete @profile</button>
+      </div>
     </div>
   </div>
 </div>

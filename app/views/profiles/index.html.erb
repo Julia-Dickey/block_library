@@ -3,20 +3,24 @@
 <!--
 <%= link_to '+', new_profile_path, :class => "btn btn-success floating-button add-float", :style => "z-index: 1" %> -->
 
+<div class="background-grey">
+
+
 <div class="container-fluid hidden-sm-up text-muted">
   <h3 class="mt-4">Member Directory</h3>
   <div class="col-sm-6 directory list-group">
     <% if @profiles.any? %>
       <% @profiles.each do |profile| %>
-        <div class="list-group-item list-group-item-action pl-3 border-right-0 border-left-0">
+        <div class="list-group-item list-group-item-action pl-0 border-right-0 border-left-0">
           <% if profile.status === "Survive" %>
-            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-01.png" style="width: 50px">
+            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-01.png" style="width: 75px">
           <% elsif profile.status === "Strive" %>
-            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-02.png" style="width: 50px">
+            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-02.png" style="width: 75px">
           <% elsif profile.status == "Thrive" %>
-            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-03.png" style="width: 50px">
+            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-03.png" style="width: 75px">
           <% end %>
-          <%= link_to profile.company, profile_path(profile), :class => "text-muted pl-3" %>
+          <p class="mb-0"><%= link_to profile.company, profile_path(profile), :class => "text-muted pl-3 list-members", :style => "font-size: x-large" %></p>
+
         </div>
       <% end %>
     <% end %>
@@ -26,7 +30,7 @@
 <div class="container hidden-xs-down text-muted">
   <div class="card-group">
     <div class="row">
-      <h3 class="my-4">Member Directory</h3>
+      <h3 class="ml-4 my-4">Member Directory</h3>
     </div>
     <!-- <div class="row">
       <a href="#">INDUSTRY</a> |
@@ -34,12 +38,12 @@
       <a href="#">A&emdash;Z</a>
 
     </div> -->
-    <div class="row d-flex flex-wrap text-center">
+    <div class="row d-flex flex-wrap mt-4 text-center">
     <% if @profiles.any? %>
         <% @profiles.each do |profile| %>
-          <div class="col-sm-4 mb-4" style="">
+          <div class="col-md-4 mb-4" style="">
             <div class="card text-muted" style="box-shadow:0 2px 5px 0 rgba(0,0,0,.10), 0 2px 10px 0 rgba(0,0,0,.12); border-radius: 20px">
-              <img class="card-img-top hidden-xs-down" style="background-image: url(../images/profile_preview.png); height: 200px; width: auto; border-radius: 20px 20px 0 0" alt="">
+              <img class="card-img-top hidden-xs-down" style="background-image: url(../images/profile_preview2.png); height: 200px; width: auto; border-radius: 20px 20px 0 0" alt="">
               <div class="card-block pb-5">
                 <% if profile.status === "Survive" %>
                   <img class="card-profile-img rounded-circle hidden-xs-down" src="../images/starve_ups_stage-01.png" style="width: 100px; margin-top: -4rem">
@@ -48,8 +52,8 @@
                 <% elsif profile.status == "Thrive" %>
                   <img class="card-profile-img rounded-circle hidden-xs-down" src="../images/starve_ups_stage-03.png" style="width: 100px; margin-top: -4rem">
                 <% end %>
-                <h5 class="card-title"><%= link_to profile.company, profile_path(profile)%></h5>
-                <p class="card-text"><%= profile.industry %></p>
+                <h4 class="card-title"><%= link_to profile.company, profile_path(profile)%></h4>
+                <p class="card-text" style="font-weight: light"><%= profile.industry %></p>
               </div>
             </div>
           </div>
@@ -58,37 +62,6 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="mt-2">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card card-profile">
-        <div class="card-header" style="background-image: url(../images/placeholder_shaded.png); height: 180px; width: 100%"></div>
-        <div class="card-block text-xs-center">
-          <img class="card-profile-img rounded-image" src="../images/founders.jpeg" style: "rou">
-          <h5 class="card-title">Jacob Thornton</h5>
-          <p class="mb-4">Big belly rude boy, million dollar hustler. Unemployed.</p>
-          <button class="btn btn-outline-primary btn-sm">
-            <span class="icon icon-add-user"></span> Follow
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card card-profile">
-        <div class="card-header" style="background-image: url(https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11240760_365538423656311_112029877_n.jpg);"></div>
-        <div class="card-block text-xs-center">
-          <img class="card-profile-img" src="../assets/img/avatar-mdo.png">
-          <h5 class="card-title">Mark Otto</h5>
-          <p class="mb-4">GitHub and Bootstrap. Formerly at Twitter. Huge nerd.</p>
-          <button class="btn btn-outline-primary btn-sm">
-            <span class="icon icon-add-user"></span> Follow
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <div class="modal fade" id="new-profile-modal">
   <div class="modal-dialog" role="document">
@@ -104,4 +77,6 @@
       </div>
     </div>
   </div>
+</div>
+
 </div>

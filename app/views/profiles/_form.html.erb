@@ -3,68 +3,67 @@
   <%= form_for @profile, remote: true do |f| %>
 
     <div class="field form-group text-uppercase">
-      <%= f.label :company, style:"font-size: .75em" %>
+      <%= f.label :company, class:"form-label", style:"font-size: .75em" %>
       <%= f.text_field :company, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body, :class => "form-control" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :body, class:"form-label", style:"font-size: .75em" %>
+      <%= f.text_area :body, :class => "form-control", :style => "min-height: 500px" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :overview %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :overview, class:"form-label", style:"font-size: .75em" %>
       <%= f.text_field :overview, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :status, "Member Status" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :status, "Member Status", style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :status, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :industry %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :industry, style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :industry, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :founded %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :founded, style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :founded, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :membersince, "Member Since" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :membersince, "Member Since", style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :membersince, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :funding, "Funding Source" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :funding, "Funding Source", style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :funding, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :strategy, "Business Strategy" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :strategy, "Business Strategy", style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :strategy, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :exit, "Exit Strategy" %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :exit, "Exit Strategy", style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :exit, :class => "form-control" %>
     </div>
 
-
-    <div class="field form-group">
-      <%= f.label :website %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :website, style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :website, :class => "form-control" %>
     </div>
 
-    <div class="field form-group">
-      <%= f.label :email %>
+    <div class="field form-group text-uppercase">
+      <%= f.label :email, style:"font-size: .75em", class:"form-label" %>
       <%= f.text_field :email, :class => "form-control" %>
     </div>
 
     <div class="actions">
-      <%= f.submit class: 'btn btn-outline-success' %>
+      <%= f.submit class: 'btn btn-default' %>
     </div>
   <% end %>
 </div>

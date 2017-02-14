@@ -2,9 +2,94 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $grey: #999;
+$bgrdgrey: #f4f4f4;
+$ltgrey: #bcbec0;
 $dkgrey: #616161;
-$blue: #307EC2;
-$dkblue: #235B8C;
+$ltblue: #589fb7;
+$blue: #295D85;
+$ltgreen: #9bba63;
+$hovergreen: #8baa55;
+$green: #8aa55b;
+// FROM STAGES
+$dkblue: #314B60;
+$dkgreen: #719041;
+$red: #A15B5A;
+
+$baseFontFamily: 'Work Sans', sans-serif !important;
+$bodyFontFamily: 'Open Sans', sans-serif !important;
+$headline: 'Proxima nova', serif;
+
+
+
+
+$linkColor: $dkblue;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $baseFontFamily !important;
+}
+
+* p {
+  font-family: $bodyFontFamily !important;
+}
+
+.form-group {
+  .form-label {
+    color: $blue !important;
+    font-family: $baseFontFamily !important;
+    font-weight: 500;
+  }
+}
+
+
+.card-block {
+  h4 {
+    a {
+      font-family: $baseFontFamily !important;
+      letter-spacing: -.75px;
+      font-size: 2rem;
+      font-weight: 500 !important;
+    }
+  }
+}
+
+.jumbotron {
+  h1 {
+    font-family: $headline !important;
+    font-weight: 500 !important;
+  }
+}
+
+.color-block {
+  font-family: $baseFontFamily !important;
+  .label {
+    font-weight: 500 !important;
+  }
+}
+
+.details {
+  font-family: $bodyFontFamily !important;
+  .quote {
+    font-weight: 200 !important;
+    letter-spacing: .5px;
+  }
+  #subhead {
+    font-family: $baseFontFamily !important;
+  }
+  .subhead {
+    font-family: $baseFontFamily !important;
+    color: $blue;
+  }
+  p {
+    .body-copy {
+      font-family: $bodyFontFamily !important;
+    }
+  }
+}
+
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -33,14 +118,27 @@ $dkblue: #235B8C;
 //   height: auto;
 // }
 
+h3 {
+  font-family: $baseFontFamily;
+  font-weight: bolder !important;
+  color: $blue;
+}
+
 .card-title {
-  a {
-    color: $dkblue;
-    &:hover {
-      text-decoration: none;
-      color: $blue;
+  font-family: $baseFontFamily;
+    h4, a {
+      color: $dkblue;
+      font-weight: 500;
+      font-size: 2rem;
+      &:hover {
+        text-decoration: none;
+        color: $blue;
     }
   }
+}
+
+.background-grey {
+  background-color: $bgrdgrey;
 }
 
 .background {
@@ -60,8 +158,8 @@ $dkblue: #235B8C;
 }
 
 .form-control{
-  border: .5px solid whitesmoke;
-  border-radius: 10px;
+  border: .25px solid $ltgrey;
+  border-radius: 8px;
 }
 
 .form-group {
@@ -77,9 +175,31 @@ $dkblue: #235B8C;
     right: 0;
   }
 }
+
+p {
+  .list-members {
+    font-family: $baseFontFamily;
+    a {
+      font-size: 2rem !important;
+    }
+  }
+
+}
+
 .add-float {
-  top: 5em;
+  background-color: $ltgreen !important;
+  border: 1px solid $ltgreen !important;
+  top: 2rem;
   right: -80px;
+  &:hover {
+    border: 1px solid $hovergreen !important;
+    background-color: $hovergreen;
+  }
+}
+
+.delete-float {
+  top: 7.5rem;
+  right: -65px;
 }
 
 .edit-float {
@@ -102,13 +222,36 @@ $dkblue: #235B8C;
 //   height: 0;
 // }
 
+.btn-default {
+  border: 1px solid $dkblue !important;
+  background-color: $dkblue !important;
+  width: 100%;
+  color: white !important;
+  &:hover {
+    color: white !important;
+    background-color: $blue !important;
+    border: 1px solid $blue !important;
+  }
+}
+
 .profile-show {
   background: url(../images/placeholder_shaded.png) center top no-repeat;
 }
 
 .color-block {
-  @include gradient-vertical-three-colors(#F2F2F2, #F7F7F7, 50%, #E5E5E5);
+  // @include gradient-vertical-three-colors(#F2F2F2, #F7F7F7, 50%, #E5E5E5);
   border-radius: 15px;
+  background-color: $ltblue;
+  color: white;
+  .label, p, h5, a {
+    color: white !important;
+  }
+  .label {
+    letter-spacing: .25px;
+  }
+  p {
+    font-weight: lighter;
+  }
 }
 
 
@@ -130,14 +273,9 @@ a {
   }
 }
 
-
-
-
-
 .contact-image {
   background: url(../images/founders.jpeg) center top no-repeat;
 }
-
 
 @media screen and (min-width: 575px) {
   .contact-info {
@@ -156,21 +294,3 @@ a {
     border-radius: 0px 0px 0px 0px;
   }
 }
-
-
-// .tiles {
-//   flex-direction: column;
-//   border: 1px solid $grey;
-//   border-radius: 4px;
-//   margin-right: 1em;
-//   padding-top: .5em;
-//   p {
-//     font-size: 1em;
-//     font-weight: 300;
-//     color: $grey;
-//     letter-spacing: .5px;
-//   }
-//   em {
-//     letter-spacing: normal;
-//   }
-// }
