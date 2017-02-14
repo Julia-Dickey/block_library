@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $grey: #999;
 $dkgrey: #616161;
-$blue: #4A89FF;
+$blue: #307EC2;
+$dkblue: #235B8C;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -31,6 +32,16 @@ $blue: #4A89FF;
 //   width: 20em;
 //   height: auto;
 // }
+
+.card-title {
+  a {
+    color: $dkblue;
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+}
 
 .background {
   border-radius: 4px;
@@ -62,15 +73,18 @@ $blue: #4A89FF;
   &:hover {
     right: 0;
   }
+  &:click {
+    right: 0;
+  }
 }
 .add-float {
   top: 5em;
-  right: -10px;
+  right: -80px;
 }
 
 .edit-float {
   right: -45px;
-  top: 19rem;
+  top: 3.5rem;
 }
 
 // .shadow {

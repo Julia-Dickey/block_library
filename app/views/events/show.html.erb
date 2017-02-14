@@ -1,25 +1,46 @@
+<%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Edit'.html_safe, edit_event_path(@event), :class=> "btn btn-info edit-float floating-button text-white", :style => "border-radius: 5px 0 0 5px", id: "edit-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#edit-event-modal' %>
+
+<div class="container">
+
 <div class="container-fluid text-muted">
-  <div class="row d-flex justify-content-end mx-1 my-3">
+  <div class="row d-flex justify-content-end my-2">
     <a href="/events"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
   </div>
 
-  <h4 class="display-4">
+  <h4 class="display-4" style="font-weight: lighter; letter-spacing: 1px">
     <%= @event.title %>
   </h4>
-  <p class="mt-4"><%= @event.start %><br/>
+  <p class="mt-4">
+    March 8, 2017<br/>
+    6&mdash;8:00PM |
+    <!-- <%= @event.start.hour %>:<br/>
+    <%= @event.start.month %>/<%= @event.start.day %> -->
   <% if @event.exclusive %>
-    <strong>Members only</strong><br/>
+    Members only<br/>
   <% else %>
-    <strong>Public event</strong><br/>
+    <span class="text-uppercase">Public event</span><br/>
   <% end %>
-    <strong>Location: </strong>
     <%= @event.location %>
   </p>
-
-  <p><strong>Details:</strong><br/>
+  <hr class="my-4">
+  <h5>Details:</h5><br/>
+  <p>
     <%= @event.body %>
   </p>
 
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
+  <div class="modal fade" id="edit-event-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit event details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="new-event-form">
+          <%= render "form" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

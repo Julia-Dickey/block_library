@@ -1,7 +1,9 @@
-  <%= form_for @profile do |f| %>
+<div class="text-muted">
 
-    <div class="field form-group">
-      <%= f.label :company %>
+  <%= form_for @profile, remote: true do |f| %>
+
+    <div class="field form-group text-uppercase">
+      <%= f.label :company, style:"font-size: .75em" %>
       <%= f.text_field :company, :class => "form-control" %>
     </div>
 
@@ -65,3 +67,4 @@
       <%= f.submit class: 'btn btn-outline-success' %>
     </div>
   <% end %>
+</div>

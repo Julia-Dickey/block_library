@@ -1,13 +1,16 @@
-<div class="container-fluid">
-  <div class="row d-flex justify-content-end mx-1 my-3">
+<!-- <div class="container-fluid"> -->
+  <!-- <div class="row d-flex justify-content-end mx-1 my-3">
     <a href="/events"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
-  </div>
-    <h3 class="ml-2">Edit event details</h3>
+  </div> -->
+  <div class="modal-header">
+    <h5 class="modal-title">Edit event details</h5>
+    <a href="/events"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </a>
 
+  </div>
+  <div class="modal-body col-sm-6" style="">
     <%= render 'form', event: @event %>
 
-    <%= link_to 'Show', @event %> |
-    <%= link_to 'Back', events_path %>
-
+  </div>
 
 </div>
