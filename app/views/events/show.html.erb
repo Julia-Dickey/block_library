@@ -1,5 +1,8 @@
 <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Edit'.html_safe, edit_event_path(@event), :class=> "btn btn-info edit-float floating-button text-white", :style => "border-radius: 5px 0 0 5px", id: "edit-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#edit-event-modal' %>
 
+<%= link_to '<i class="fa fa-times" aria-hidden="true"></i>
+ <span>&nbsp; &nbsp;Delete </span>'.html_safe, event_path(@event), :class => "btn rounded-left btn-danger delete-float floating-button text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px", id: "delete-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#delete-event-modal' %>
+
 <div class="container">
 
 <div class="container-fluid text-muted">
@@ -7,10 +10,10 @@
     <a href="/events"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
   </div>
 
-  <h4 class="display-4" style="font-weight: lighter; letter-spacing: 1px">
+  <h4 class="display-4" style="font-family:'proxima-nova'; font-weight: 100; color: #295D85; letter-spacing:-.5px">
     <%= @event.title %>
   </h4>
-  <p class="mt-4">
+  <p class="mt-4" style="font-family:'proxima-nova'; font-weight: 500">
     March 8, 2017<br/>
     6&mdash;8:00PM |
     <!-- <%= @event.start.hour %>:<br/>
@@ -23,8 +26,8 @@
     <%= @event.location %>
   </p>
   <hr class="my-4">
-  <h5>Details:</h5><br/>
-  <p>
+  <h5 style="font-family:'proxima-nova'; font-weight: 500; color: #295D85">Details:</h5><br/>
+  <p style="font-family:'proxima-nova'; font-weight: 400">
     <%= @event.body %>
   </p>
 
@@ -37,9 +40,26 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="new-event-form">
+        <div class="modal-body" id="edit-event-form">
           <%= render "form" %>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delete-event-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="delete-member-form">
+        <h5 class="display-5 pt-4 px-auto text-muted">Are you sure you want to delete this event?  </h5>
+        <p class="pb-4 px-auto text-muted">You might miss it when it's gone.</p>
+        <button class="btn btn-danger" type="button" name="button">Delete Forever</button>
       </div>
     </div>
   </div>

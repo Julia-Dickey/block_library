@@ -15,7 +15,7 @@ $dkblue: #314B60;
 $dkgreen: #719041;
 $red: #A15B5A;
 
-$baseFontFamily: 'Work Sans', sans-serif !important;
+$baseFontFamily: 'proxima-nova', sans-serif !important;
 $bodyFontFamily: 'Open Sans', sans-serif !important;
 $headline: 'Proxima nova', serif;
 
@@ -189,7 +189,7 @@ p {
 .add-float {
   background-color: $ltgreen !important;
   border: 1px solid $ltgreen !important;
-  top: 2rem;
+  top: .75rem;
   right: -80px;
   &:hover {
     border: 1px solid $hovergreen !important;
@@ -198,20 +198,35 @@ p {
 }
 
 .delete-float {
-  top: 7.5rem;
+  top: 5rem;
   right: -65px;
 }
 
 .edit-float {
   right: -45px;
-  top: 3.5rem;
+  top: 2rem;
 }
 
-// .shadow {
-//   -moz-box-shadow:    0px 2px 6px 3px #ccc;
-//   -webkit-box-shadow: 0px 2px 6px 3px #ccc;
-//   box-shadow:         0px 2px 6px 3px #ccc;
-// }
+.shadow {
+  -moz-box-shadow:    2px 2px 3px 2px #e8e8e8;
+  -webkit-box-shadow: 2px 2px 3px 2px #e8e8e8;
+  box-shadow:         2px 2px 3px 2px #e8e8e8;
+}
+
+.shadow-nav {
+  -moz-box-shadow:    2px 2px 6px 2px #ccc;
+  -webkit-box-shadow: 2px 2px 6px 2px #ccc;
+  box-shadow:         2px 2px 6px 2px #ccc;
+}
+
+li.nav-item {
+  a.nav-link {
+    color: #e8e8e8;
+    &:hover {
+      color: white;
+    }
+  }
+}
 
 // .quote {
 //   line-height: normal;
@@ -279,10 +294,12 @@ a {
 
 @media screen and (min-width: 575px) {
   .contact-info {
-    border-radius: 0 15px 0 0;
+    border-radius: 15px;
   }
   .contact-image {
-    border-radius: 15px 0 0 0
+    border-right: 10px solid white;
+    width: 95%;
+    // border-radius: 15px;
   }
 }
 
