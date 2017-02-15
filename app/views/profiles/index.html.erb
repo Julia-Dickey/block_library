@@ -27,15 +27,16 @@
       <% @profiles.each do |profile| %>
         <div class="list-group-item list-group-item-action pl-0 border-right-0 border-left-0">
           <% if profile.status === "Survive" %>
-            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-01.png" style="width: 75px">
+            <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-01.png" style="width: 2rem">
           <% elsif profile.status === "Strive" %>
-            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-02.png" style="width: 75px">
+            <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-02.png" style="width: 2rem">
           <% elsif profile.status == "Thrive" %>
-            <img class="card-profile-img rounded-circle hidden-md-up" src="../images/starve_ups_stage-03.png" style="width: 75px">
+            <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-03.png" style="width: 2rem">
           <% end %>
-          <p class="mb-0"><%= link_to profile.company, profile_path(profile), :class => "text-muted pl-3 list-members", :style => "font-size: x-large" %></p>
+          <p class="mb-0 ml-0"><%= link_to profile.company, profile_path(profile), :class => "text-muted pl-3 list-members", :style => "font-size: x-large" %></p>
 
         </div>
+
       <% end %>
     <% end %>
   </div>
@@ -52,7 +53,7 @@
       <a href="#">A&emdash;Z</a>
 
     </div> -->
-    <div class="row d-flex flex-wrap mt-4 text-center">
+    <div class="row d-flex flex-wrap text-center">
     <% if @profiles.any? %>
         <% @profiles.each do |profile| %>
           <div class="col-md-4 mb-4" style="">
@@ -60,11 +61,11 @@
               <img class="card-img-top hidden-xs-down" style="background-image: url(../images/profile_preview2.png); height: 200px; width: auto; border-radius: 10px 10px 0 0; border: .5px solid white" alt="">
               <div class="card-block pb-5">
                 <% if profile.status === "Survive" %>
-                  <img class="card-profile-img rounded-circle hidden-xs-down" src="../images/starve_ups_stage-01.png" style="width: 100px; margin-top: -4rem">
+                  <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down" src="../images/starve_ups_stage-01.png" style="width: 50px; margin-top: -4rem">
                 <% elsif profile.status === "Strive" %>
-                  <img class="card-profile-img rounded-circle hidden-xs-down" src="../images/starve_ups_stage-02.png" style="width: 100px; margin-top: -4rem">
+                  <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down" src="../images/starve_ups_stage-02.png" style="width: 50px; margin-top: -4rem">
                 <% elsif profile.status == "Thrive" %>
-                  <img class="card-profile-img rounded-circle hidden-xs-down" src="../images/starve_ups_stage-03.png" style="width: 100px; margin-top: -4rem">
+                  <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down" src="../images/starve_ups_stage-03.png" style="width: 50px; margin-top: -4rem">
                 <% end %>
                 <h4 class="card-title"><%= link_to profile.company, profile_path(profile)%></h4>
                 <p class="card-text" style="font-weight: light"><%= profile.industry %></p>
