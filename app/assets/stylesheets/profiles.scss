@@ -15,9 +15,9 @@ $dkblue: #314B60;
 $dkgreen: #719041;
 $red: #A15B5A;
 
-$baseFontFamily: 'proxima-nova', sans-serif !important;
+$baseFontFamily: 'Open Sans', sans-serif !important;
 $bodyFontFamily: 'Open Sans', sans-serif !important;
-$headline: 'Proxima nova', serif;
+$headline: 'Roboto', serif;
 
 
 
@@ -29,12 +29,12 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: $baseFontFamily !important;
+  font-family: $headline !important;
 }
 
-* p {
-  font-family: $bodyFontFamily !important;
-}
+// * p {
+//   font-family: $baseFontFamily !important;
+// }
 
 .form-group {
   .form-label {
@@ -45,14 +45,21 @@ h5 {
 }
 
 
-.card-block {
+div.card-block {
   h4 {
     a {
-      font-family: $baseFontFamily !important;
-      letter-spacing: -.75px;
-      font-size: 2rem;
-      font-weight: 500 !important;
+      font-size: 1.5rem;
+      border-bottom: .5px solid $ltgrey;
+      // font-weight: 100 !important;
     }
+  }
+  p.card-text {
+    font-family: $baseFontFamily !important;
+    font-weight: lighter;
+    letter-spacing: .25px;
+    // font-style: italic;
+    color: $grey;
+    font-size: 1em;
   }
 }
 
@@ -77,15 +84,15 @@ h5 {
     letter-spacing: .5px;
   }
   #subhead {
-    font-family: $baseFontFamily !important;
+    font-family: $headline !important;
   }
   .subhead {
-    font-family: $baseFontFamily !important;
+    font-family: $headline !important;
     color: $blue;
   }
   p {
     .body-copy {
-      font-family: $bodyFontFamily !important;
+      font-family: $baseFontFamily !important;
     }
   }
 }
@@ -113,28 +120,28 @@ h5 {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
 }
 
-// img {
-//   width: 20em;
-//   height: auto;
-// }
-
 h3 {
-  font-family: $baseFontFamily;
-  font-weight: bolder !important;
-  color: $blue;
+  font-family: $headline;
+  font-weight: 700 !important;
+  letter-spacing: -.5px;
+  color: $dkgrey;
 }
 
 .card-title {
-  font-family: $baseFontFamily;
-    h4, a {
-      color: $dkblue;
-      font-weight: 500;
-      font-size: 2rem;
-      &:hover {
-        text-decoration: none;
-        color: $blue;
+  font-family: $headline;
+    h4 {
+      a {
+        font-weight: 500;
+        &:hover {
+          text-decoration: none;
+          color: $blue;
+        }
     }
   }
+}
+
+.white-border {
+  border: .5px solid white;
 }
 
 .background-grey {
@@ -178,7 +185,7 @@ h3 {
 
 p {
   .list-members {
-    font-family: $baseFontFamily;
+    font-family: $headline;
     a {
       font-size: 2rem !important;
     }
@@ -189,8 +196,8 @@ p {
 .add-float {
   background-color: $ltgreen !important;
   border: 1px solid $ltgreen !important;
-  top: .75rem;
-  right: -80px;
+  top: 1rem;
+  right: -70px;
   &:hover {
     border: 1px solid $hovergreen !important;
     background-color: $hovergreen;
@@ -221,16 +228,20 @@ p {
 
 li.nav-item {
   a.nav-link {
-    color: #bababa;
+    color: #e8e8e8;
+    font-weight: 500;
     &:hover {
-      color: white;
+      color: $ltblue;
+    }
+    &.active {
+      color: $ltblue !important;
+      font-weight: bolder !important;
     }
   }
 }
 
 sort-members {
-  font-family: $bodyFontFamily !important;
-  font-weight: bold;
+  font-family: $headline !important;
 }
 
 // .quote {
@@ -283,9 +294,9 @@ a {
 }
 
 .link {
-  color: $blue;
+  // color: $blue;
   text-decoration: none;
-  opacity: .9;
+  // opacity: .9;
   &:hover {
     border-bottom: .25px solid;
     padding-bottom: .25em;
