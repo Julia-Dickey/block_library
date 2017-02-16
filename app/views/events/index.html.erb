@@ -2,43 +2,30 @@
 <div class="sc_block">
 
   <%= link_to "+ &nbsp; Event".html_safe, new_event_path, { class: "btn btn-success add-event-float text-white", style:"border-radius: 5px 0 0 5px", id: "new-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-event-modal'} %>
-  <div class="container">
-
+  <div class="container-fluid
+  ">
     <div class='calendar my-4' style="color: #636c72">
     </div>
+    <hr class="hidden-sm-up">
 
-    <div class="col-sm-8 event-list hidden-sm-up">
-      <table>
-        <!-- <thead>
-          <tr>
-            <th colspan="6"><h2>Upcoming Events</h2></th> -->
-            <!-- <th colspan="3"></th> -->
-          <!-- </tr>
-        </thead> -->
-        <tbody style="font-family:'Proxima nova'; font-weight: light">
-          <% @eventsList.each do |event| %>
-            <tr>
-              <td class="d-flex align-items-start"><h1 class="event-date mr-4">12</h1></td>
-              <td>
-              <p class="text-muted event-desc py-3" style="line-height: 1.25; font-family: 'Work sans'"><strong><%= link_to event.title, event_path(event)%></strong><br/>
-              <span class="text-uppercase"><small>5&mdash;6PM |
-              <% if event.exclusive %>
-              MEMBERS ONLY</small></span></p>
-              <% else %>
-                PUBLIC</small></span></p>
-              <% end %>
-              <hr>
-              </td>
-              <!-- <td><%= link_to 'Edit', edit_event_path(event) %></td>
-              <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <!-- <div class="" id="remote_container">
-
-    </div> -->
+      <div class="col-sm-8 event-list hidden-sm-up">
+        <% @eventsList.each do |event| %>
+        <div class="row d-flex flex-nowrap justify-content-start align-items-center">
+          <div class="col-xs-1 px-0">
+            <h1 class="event-date mr-4"><%= event.start.strftime("%d")  %></h1>
+          </div>
+          <div class="col px-0">
+            <p class="text-muted event-desc" style=""><strong><%= link_to event.title, event_path(event)%></strong><br/>
+            <span class="text-uppercase"><small>5&mdash;6PM |
+            <% if event.exclusive %>
+            MEMBERS ONLY</small></span></p>
+            <% else %>
+              PUBLIC</small></span></p>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
       <div class="modal fade" id="new-event-modal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

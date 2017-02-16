@@ -1,11 +1,12 @@
 $grey: #636c72;
 $mdgrey: #C0C0C0;
 $ltgrey: #f7f7f7;
+$ltblue: #589fb7;
 $blue: #3a87ad;
 $action: #3a87ad;
 
-$bodyFontFamily: 'Open Sans', sans-serif !important;
-
+$bodyFontFamily: 'Open Sans', sans-serif;
+$headline: 'Roboto', serif;
 
 
 form, table {
@@ -32,6 +33,10 @@ form, table {
   }
 }
 
+.fc-today {
+  background-color: #E0EFEF !important;
+}
+
 .fc-button:focus {
   outline: 0;
   // background-color: whitesmoke;
@@ -49,23 +54,24 @@ form, table {
   border: 0;
   text-shadow: none;
 }
-h1 {
-  .event-date {
-    font-family: 'Proxima nova' !important;
-  }
+h1.event-date {
+  color: $ltblue;
+  font-family: $headline !important;
+  font-weight: 100 !important;
+  letter-spacing: -3px;
 }
 .event-date {
   color: $mdgrey;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 .event-desc {
   font-family: $bodyFontFamily !important;
-  font-weight: lighter;
+  // font-weight: lighter;
 }
 .add-event-float {
   position: absolute;
-  top: 1rem;
-  right: -58px;
+  bottom: 4rem;
+  right: -52px;
   // height: 2rem;
   // line-height: 1;
   z-index: 1031;
@@ -100,15 +106,17 @@ input[type="color"] {
 .calendar {
   .fc-button {
     height: 2rem;
+    font-family: $bodyFontFamily;
+    font-weight: 200;
   }
   .fc-center h2 {
-    font-weight: 200;
+    font-weight: 300;
     text-align: center;
   }
   th.fc-day-header.fc-widget-header, .fc-center {
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: lighter;
+    font-weight: 300;
   }
 
   .fc-row .fc-widget-header {
@@ -124,21 +132,21 @@ input[type="color"] {
   }
   .fc-day-number {
     padding: .25rem .5rem 0 0;
-    font-weight: lighter;
+    font-weight: 200;
   }
   .fc-widget-content {
     height: 20px;
   }
   button {
-    .fc-state-down, .fc-state-active {
+    .fc-state-down, .fc-state-active, .fc-state-hover {
       box-shadow: inset 0 0px 0px rgba(0, 0, 0, 0.15), 0 0px 0px rgba(0, 0, 0, 0.05);
-      background: $grey !important;
+      background: $ltblue !important;
     }
     .fc-state-default {
       .fc-icon.fc-icon-right-single-arrow {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: $bodyFontFamily;
         font-size: .5rem;
-        font-weight: lighter;
+        font-weight: 300;
       }
     }
     background: #fff !important;
@@ -166,21 +174,16 @@ input[type="color"] {
   }
 }
 
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 580px) {
   .calendar {
-    margin: 1em auto;
-    .fc-basic-view {
-    }
+    // margin: 1em auto;
     td.fc-day-top {
       font-size: 24px;
-      font-weight: lighter;
+      // font-weight: 600;
       text-align: center;
       padding: 0;
     }
-    button.fc-agendaWeek-button {
-      display: none;
-    }
+
     div.fc-center h2 {
       font-size: 2rem;
       text-align: center;
@@ -193,7 +196,7 @@ input[type="color"] {
     }
     th.fc-day-header.fc-widget-header {
       font-variant: small-caps;
-      font-weight: lighter;
+      // font-weight: 300;
       font-size: .75em;
     }
     .fc-sun, .fc-mon, .fc-tue, .fc-wed, .fc-thu, .fc-fri, .fc-sat {
@@ -207,10 +210,21 @@ input[type="color"] {
       padding: auto;
     }
     .fc-view-container {
-      height: auto;
+      // height: auto;
+      display: none;
     }
   }
   .event-list {
     display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  div.fc-center h2 {
+    font-size: 1.5rem !important;
+    padding-top: .25rem;
+  }
+  button.fc-agendaWeek-button {
+    display: none;
   }
 }
