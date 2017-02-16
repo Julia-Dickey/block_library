@@ -247,10 +247,28 @@ p {
 //   box-shadow: inset 1px 1px 10px #bababa;
 // }
 
+// .shadow-inner {
+//   box-shadow: inset -15px 0 10px 0px #e8e8e8;
+//
+//   -moz-box-shadow: inset -15px 0 10px 0px #e8e8e8;
+//   -webkit-box-shadow: inset -15px 0 10px 0px #e8e8e8;
+//   // box-shadow:         inset 2px 0px 10px 1px #e8e8e8;
+// }
+
+.blue-shadow {
+  // z-index: 1031;
+  box-shadow: inset -5px 0 2px 0px #5092A8;
+
+  -moz-box-shadow: inset -5px 0 2px 0px #5092A8;
+  -webkit-box-shadow: inset -5px 0 2px 0px #5092A8;
+  // box-shadow:         inset 2px 0px 10px 1px #e8e8e8;
+}
+
 .shadow-left {
-  -moz-box-shadow:    -2px 0px 10px 1px #e8e8e8;
-  -webkit-box-shadow: -2px 0px 10px 1px #e8e8e8;
-  box-shadow:         -2px 0px 10px 1px #e8e8e8;
+  box-shadow: 2px 0 10px 1px #e8e8e8;
+
+  -moz-box-shadow: 2px 0 10px 1px #e8e8e8;
+  -webkit-box-shadow: 2px 0 10px 1px #e8e8e8;
 }
 
 .label {
