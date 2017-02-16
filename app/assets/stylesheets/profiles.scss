@@ -15,8 +15,8 @@ $dkblue: #314B60;
 $dkgreen: #719041;
 $red: #A15B5A;
 
-$baseFontFamily: 'Open Sans', sans-serif !important;
-$bodyFontFamily: 'Open Sans', sans-serif !important;
+// $baseFontFamily: 'Open Sans', sans-serif !important;
+$bodyFontFamily: 'Open Sans', sans-serif;
 $headline: 'Roboto', serif;
 
 
@@ -32,14 +32,27 @@ h5 {
   font-family: $headline !important;
 }
 
+.text-blue {
+  color: $blue;
+}
+
+.btn-info {
+  background-color: $ltblue;
+  border: 1px solid $ltblue;
+  &:hover {
+    background-color: $blue;
+    border: 1px solid $blue;
+  }
+}
+
 // * p {
-//   font-family: $baseFontFamily !important;
+//   font-family: $bodyFontFamily !important;
 // }
 
 .form-group {
   .form-label {
     color: $blue !important;
-    font-family: $baseFontFamily !important;
+    font-family: $bodyFontFamily !important;
     font-weight: 500;
   }
 }
@@ -54,7 +67,7 @@ div.card-block {
     }
   }
   p.card-text {
-    font-family: $baseFontFamily !important;
+    font-family: $bodyFontFamily !important;
     font-weight: lighter;
     letter-spacing: .25px;
     // font-style: italic;
@@ -63,40 +76,44 @@ div.card-block {
   }
 }
 
-.jumbotron {
-  h1 {
-    font-family: $headline !important;
-    font-weight: 500 !important;
-  }
-}
+// .jumbotron {
+//   h1 {
+//     font-family: $headline !important;
+//     font-weight: 500 !important;
+//   }
+// }
 
 .color-block {
-  font-family: $baseFontFamily !important;
+  font-family: $bodyFontFamily !important;
   .label {
     font-weight: 500 !important;
   }
 }
 
 .details {
-  font-family: $bodyFontFamily !important;
   .quote {
-    font-weight: 200 !important;
-    letter-spacing: .5px;
+    font-weight: 200;
+    font-family: $headline;
+    color: $ltblue;
   }
-  #subhead {
-    font-family: $headline !important;
-  }
-  .subhead {
-    font-family: $headline !important;
-    color: $blue;
-  }
-  p {
-    .body-copy {
-      font-family: $baseFontFamily !important;
-    }
+  // #subhead {
+  //   font-family: $headline !important;
+  //   font-weight: 600;
+  // }
+  p.body-copy {
+    font-family: $bodyFontFamily !important;
+    font-weight: 300;
+    color: $dkgrey;
+    font-size: 1.25em;
+    line-height: 1.5;
   }
 }
 
+.subhead {
+  font-family: $headline !important;
+  font-weight: 600;
+  color: $blue;
+}
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -206,7 +223,7 @@ p {
 
 .delete-float {
   top: 5rem;
-  right: -65px;
+  right: -62px;
 }
 
 .edit-float {
@@ -226,6 +243,28 @@ p {
   box-shadow:         0px -1px 10px 0px #5e5e5e;
 }
 
+// .inner-shadow {
+//   box-shadow: inset 1px 1px 10px #bababa;
+// }
+
+.shadow-left {
+  -moz-box-shadow:    -2px 0px 10px 1px #e8e8e8;
+  -webkit-box-shadow: -2px 0px 10px 1px #e8e8e8;
+  box-shadow:         -2px 0px 10px 1px #e8e8e8;
+}
+
+.label {
+  font-size: .75rem;
+  font-weight: 600;
+  font-family: $headline;
+}
+.summary-text {
+  color: $dkgrey;
+  font-weight: 400;
+  font-family: $bodyFontFamily;
+
+}
+
 li.nav-item {
   a.nav-link {
     color: #e8e8e8;
@@ -235,7 +274,7 @@ li.nav-item {
     }
     &.active {
       color: $ltblue !important;
-      font-weight: bolder !important;
+      font-weight: 600;
     }
   }
 }
@@ -266,25 +305,26 @@ sort-members {
 }
 
 .profile-show {
-  background: url(../images/placeholder_shaded.png) center top no-repeat;
+  background: url(../images/4646EC9D-EF01-4C27-BF32A35C2A8C5D23_W960_H420.png) center top repeat;
 }
 
 .color-block {
   // @include gradient-vertical-three-colors(#F2F2F2, #F7F7F7, 50%, #E5E5E5);
-  border-radius: 15px;
+
+  // border-radius: 15px;
   background-color: $ltblue;
   color: white;
-  .label, p, h5, a {
+  p, h5, a {
     color: white !important;
   }
   .label {
     letter-spacing: .25px;
   }
-  p {
-    font-weight: lighter;
-  }
 }
 
+img {
+  width: 100%;
+}
 
 a {
   text-decoration: none;
@@ -292,6 +332,7 @@ a {
     text-decoration: none;
   }
 }
+
 
 .link {
   // color: $blue;

@@ -2,8 +2,8 @@
 <!-- <div class="container">
   <%= link_to '< Member Directory', profiles_path %>
 </div> -->
-<div class="jumbotron jumbotron-fluid d-flex align-items-center profile-show" style="height: 20rem">
-  <h1 class="display-2 text-white mx-auto"><%= @profile.company %></h1>
+<div class="jumbotron jumbotron-fluid d-flex align-items-center profile-show mb-0" style="height: 20rem">
+  <!-- <h1 class="display-2 text-white mx-auto"><%= @profile.company %></h1> -->
 </div>
 
 <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i> <span>&nbsp; &nbsp;Edit </span>'.html_safe, edit_profile_path(@profile), :class => "btn rounded-left btn-info edit-float floating-button text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px", id: "edit-member", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#edit-member-modal' %>
@@ -11,60 +11,93 @@
 <%= link_to '<i class="fa fa-times" aria-hidden="true"></i>
  <span>&nbsp; &nbsp;Delete </span>'.html_safe, profile_path(@profile), :class => "btn rounded-left btn-danger delete-float floating-button text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px", id: "delete-member", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#delete-member-modal' %>
 
-<div class="container">
+<div class="container flex-row">
   <div class="row">
-    <div class="col-sm-5 text-muted p-4 mb-4 color-block" style="max-height: 520px">
-      <!-- <h5 class="mb-4"><%= @profile.company %> at a Glance</h5> -->
-      <div class="row d-flex justify-content-between">
-        <div class="col">
-          <p class="mb-0 label" style="font-size: .65rem"><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
-          <p class="mb-3">
-            <%= @profile.industry %></p>
-        </div>
-        <div class="col">
-          <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<strong>MEMBER STATUS</strong></p>
-          <p class="mb-3"><%= @profile.status %></p>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-between">
-        <div class="col">
-          <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <strong>FOUNDED:</strong></p>
-          <p class="mb-3"><%= @profile.founded %></p>
-        </div>
-        <div class="col">
-          <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>MEMBER SINCE:</strong></p>
-          <p class="mb-3"> <%= @profile.membersince %></p>
-        </div>
-      </div>
+    <div class="col-sm-4 background-grey summary-text rounded pb-4 px-0">
+      <span>
+        <% if @profile.status === "Survive" %>
+        <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down ml-3 mr-4 mb-2" src="../images/starve_ups_stage-01.png" style="width: 75px; margin-top: -3rem">
+        <% elsif @profile.status === "Strive" %>
+        <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down ml-3 mr-4 mb-2" src="../images/starve_ups_stage-02.png" style="width: 75px; margin-top: -3rem">
+        <% elsif @profile.status == "Thrive" %>
+        <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down ml-3 mr-4 mb-2" src="../images/starve_ups_stage-03.png" style="width: 75px; margin-top: -3rem">
+        <% end %>
+      </span>
+      <img src="../images/founders.jpeg" class="px-3 hidden-xs-down" style="margin-top: -4" alt="">
+      <h3 class="pt-4 pb-2 px-3 text-blue"><%= @profile.company %></h3>
+    <!-- </div>
+  </div> -->
+  <!-- <div class="row">
+    <div class="col-sm-4 offset-xs-1 text-muted p-4 mb-4 background-grey"> -->
+      <!-- <div class="row d-flex justify-content-between"> -->
+        <!-- <div class="col"> -->
+      <p class="label mb-0 px-3 " style=""><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
+      <p class="mb-3 px-3 summary-text" style="font-size: 1em">
+        <%= @profile.industry %></p>
+    <!-- </div> -->
+    <!-- <div class="col"> -->
+      <p class="label mb-0 px-3" style=""><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;<strong>MEMBER STATUS</strong></p>
+      <p class="mb-3 px-3 summary-text"><%= @profile.status %></p>
+        <!-- </div> -->
+      <!-- </div> -->
+      <!-- <div class="row d-flex justify-content-between">
+        <div class="col"> -->
+      <p class="label mb-0 px-3" style=""><i class="fa fa-birthday-cake" aria-hidden="true"></i>&nbsp; <strong>FOUNDED:</strong></p>
+      <p class="mb-3 px-3 summary-text"><%= @profile.founded %></p>
+    <!-- </div>
+    <div class="col"> -->
+      <p class="label mb-0 px-3" style=""><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>MEMBER SINCE:</strong></p>
+      <p class="mb-3 px-3 summary-text"> <%= @profile.membersince %></p>
+    <!-- </div>
+  </div> -->
 
-      <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<strong>FUNDING SOURCES:</strong></p>
-      <p class="mb-3"><%= @profile.funding %></p>
+      <p class="label mb-0 px-3 " style=""><i class="fa fa-money" aria-hidden="true"></i>&nbsp;<strong>FUNDING SOURCES:</strong></p>
+      <p class="mb-3 px-3 summary-text"><%= @profile.funding %></p>
 
-      <p class="mb-0 label" style="font-size: .65rem"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;<strong>BUSINESS STRATEGY:</strong></p>
-      <p class="mb-3"><%= @profile.strategy %></p>
+      <p class="label mb-0 px-3" style=""><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;<strong>BUSINESS STRATEGY:</strong></p>
+      <p class="mb-3 px-3 summary-text"><%= @profile.strategy %></p>
 
-      <p class="mb-0 label" style="font-size: .65rem"><strong><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;EXIT STRATEGY:</strong></p>
-      <p class="body">
+      <p class="label mb-0 px-3" style=""><strong><i class="fa fa-eject" aria-hidden="true"></i>&nbsp;EXIT STRATEGY:</strong></p>
+      <p class="body summary-text px-3">
         <%= @profile.exit %></p>
-      <p class="mb-0 label" style="font-size: .65rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
-      <%= link_to @profile.website, :target => "_blank" %>
+      <p class="label mb-0 px-3" style=""><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
+      <p class="px-3"><%= link_to @profile.website, :target => "_blank"%></p>
 
-      <p class="mb-0 mt-3 label" style="font-size: .65rem"><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;VIDEO:</strong></p>
-      <a href="#">Check out our video</a>
+
+      <p class="mb-0 mt-3 label mb-0 px-3" style=""><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;VIDEO:</strong></p>
+      <a href="#" class="px-3">Check out our video</a>
+
+      <!-- <div class="col-sm-5 contact-info text-white py-4 pl-4" style="background-color: #252429; width: 95%"> -->
+      <div class="color-block mt-4 px-3 py-3">
+        <!-- <h5 class="subhead pb-2">We'd love to hear from you</h5> -->
+        <h5 class="subhead pb-0"><%= @profile.company %></h5>
+        <!-- <p><strong></strong><br/> -->
+          <a href="#"><%= @profile.website %></a> <br/>
+          <a href="#">info@profile.com</a>
+
+          <h5 class="subhead pt-4 pb-0">Founded by:</h5>
+          <p>
+            Founder's Name<br/>
+            1(503)321-5432<br/>
+            <a href="#">email@founder.com</a>
+          </p>
+
+      </div>
+      <!-- </div> -->
     </div>
 
-    <div class="col-sm-7 details text-muted px-4">
+    <div class="col-sm-8 details px-4 mt-1 shadow-left rounded">
       <p class="quote my-4" style="font-size: 2rem; line-height: 1.25">"<%= @profile.overview %>"</p>
       <hr>
-      <h5 class="subhead pt-4" id="subhead">About <%=@profile.company%></h5>
+      <h5 class="subhead pt-4">About <%=@profile.company%></h5>
       <p class="body-copy" style="max-width: 800px"><%=@profile.body%></p>
     </div>
   </div>
 </div>
 
-<div class="container mt-4">
-  <div class="row d-flex mb-4 justify-content-between">
-    <div class="col-sm-5 contact-info text-white py-4 pl-4" style="background-color: #252429; width: 95%">
+<!-- <div class="container mt-4"> -->
+  <!-- <div class="row d-flex mb-4 justify-content-between"> -->
+    <!-- <div class="col-sm-5 contact-info text-white py-4 pl-4" style="background-color: #252429; width: 95%">
       <h4 class="pb-4">WE'D LOVE TO HEAR FROM YOU</h4>
       <p><strong><%= @profile.company %></strong><br/>
       <a href="#"><%= @profile.website %></a> <br/>
@@ -75,11 +108,11 @@
       1(503)321-5432<br/>
       <a href="#">email@founder.com</a>
       </p>
-    </div>
+    </div> -->
     <!-- <div class="col-sm-7 contact-image">
     </div> -->
-  </div>
-</div>
+  <!-- </div> -->
+<!-- </div> -->
 
 <div class="modal fade" id="edit-member-modal">
   <div class="modal-dialog" role="document">
