@@ -1,9 +1,10 @@
 <%= link_to "+ &nbsp; Member".html_safe , new_profile_path, { class: "btn btn-success floating-button add-float text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px", id: "new-profile", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-profile-modal'} %>
 
 <div class="background-grey">
-  <div class="sort-members py-2 shadow-nav" style="background-color:#353535">
-    <ul class="nav flex-row align-items-center">
-      <h3 class="py-2 mx-4 text-white">Browse Members</h3>
+  <div class="sort-members py-2 shadow-nav hidden-sm-up" style="background-color:#353535">
+    <h3 class="pt-2 mx-4 text-white">Browse Members</h3>
+    <hr class="my-1">
+    <ul class="nav d-flex py-0 align-items-center">
       <li class="nav-item ml-4">
         <a class="nav-link active" href="#">A&mdash;Z</a>
       </li>
@@ -14,7 +15,20 @@
         <a class="nav-link" href="#">Stage</a>
       </li>
     </ul>
-
+  </div>
+  <div class="sort-members py-2 shadow-nav hidden-xs-down" style="background-color:#353535">
+    <ul class="nav d-flex py-0 align-items-center">
+      <h3 class="pt-2 mx-4 text-white">Browse Members</h3>
+      <li class="nav-item ml-4">
+        <a class="nav-link active" href="#">A&mdash;Z</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Industry</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Stage</a>
+      </li>
+    </ul>
   </div>
 
 
@@ -59,7 +73,7 @@
             <div class="col-md-3 mb-4">
               <div class="card text-muted shadow" style="border-radius: 8px">
                 <img class="card-img-top hidden-xs-down white-border" style="background-image: url(../images/profile_preview2.png); height: 100px; width: auto; border-radius: 8px 8px 0 0" alt="">
-                <div class="card-block pb-5">
+                <div class="card-block pb-0">
                   <% if profile.status === "Survive" %>
                     <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down white-border" src="../images/starve_ups_stage-01.png" style="width: 50px; margin-top: -4rem">
                   <% elsif profile.status === "Strive" %>

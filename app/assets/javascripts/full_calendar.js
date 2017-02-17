@@ -4,6 +4,12 @@ initialize_calendar = function() {
   $('.calendar').each(function(){
     var calendar = $(this);
     calendar.fullCalendar({
+      eventClick: function(event) {
+        if (event.url) {
+            window.open(event.url);
+            return false;
+        }
+      },
       // select: function(start, end) {
       //   $.getScript('/events/new', function() {
       //     $('#event_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + '&mdash;' + moment(end).format("MM/DD/YYYY HH:mm"));
@@ -19,6 +25,19 @@ initialize_calendar = function() {
         center: 'title',
         right: 'month,agendaWeek,agendaDay next'
       },
+      // TO_DO_MAKE MODAL OR SHOW PAGE COME UP WHEN YOU CLICK THE ITEM ON THE CALENDAR
+      // eventRender: function (event, element) {
+      //   element.attr('href', 'javascript:void(0);');
+      //   element.click(function() {
+            // $("#startTime").html(moment(event.start).format('MMM Do h:mm A'));
+            // $("#endTime").html(moment(event.end).format('MMM Do h:mm A'));
+            // $("#eventInfo").html(event.description);
+            // $("#eventLink").attr('href', event.url);
+            // $("#eventContent").dialog({ modal: true, title: event.title, width:350});
+      //   });
+      // },
+
+      
       selectable: true,
       selectHelper: true,
       editable: true,

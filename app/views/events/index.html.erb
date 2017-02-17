@@ -1,7 +1,6 @@
-
 <div class="sc_block">
 
-  <%= link_to "+ &nbsp; Event".html_safe, new_event_path, { class: "btn btn-success add-event-float text-white", style:"border-radius: 5px 0 0 5px", id: "new-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-event'} %>
+  <%= link_to "+ &nbsp; Event".html_safe, new_event_path, { class: "btn btn-success add-event-float text-white", style:"border-radius: 5px 0 0 5px", id: "new-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-event-modal'} %>
   <div class="container-fluid">
     <div class='calendar my-4' style="color: #636c72">
     </div>
@@ -26,7 +25,7 @@
         </div>
         <% end %>
       </div>
-      <div class="modal fade" id="new-event">
+      <div class="modal fade" id="new-event-modal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">

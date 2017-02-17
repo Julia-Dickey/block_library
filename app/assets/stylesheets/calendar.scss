@@ -21,6 +21,10 @@ form, table {
   color: $grey;
 }
 
+#eventContent {
+  display: none;
+}
+
 .modal-backdrop {
    background-color: $dkblue;
 }
@@ -36,7 +40,7 @@ p.body-copy {
   font-size: 1.25em;
   line-height: 1.5;
 }
-// 
+//
 // .subhead {
 //   font-family: $headline !important;
 //   font-weight: 600;
@@ -114,6 +118,14 @@ h1.event-date {
     border: 1px solid $hovergreen !important;
     background-color: $hovergreen;
   }
+  &:active {
+    background-color: $ltgreen !important;
+    border: 1px solid $ltgreen !important;
+  }
+}
+
+.btn-success:focus, .btn-info:focus, .btn-danger:focus {
+  box-shadow: none;
 }
 
 

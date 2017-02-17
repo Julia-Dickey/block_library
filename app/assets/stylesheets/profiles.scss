@@ -144,6 +144,10 @@ h3 {
   color: $dkgrey;
 }
 
+.card {
+  min-height: 250px;
+}
+
 .card-title {
   font-family: $headline;
     h4 {
@@ -163,6 +167,9 @@ h3 {
 
 .background-grey {
   background-color: $bgrdgrey;
+}
+.background-black {
+  background-color: black;
 }
 
 .background {
