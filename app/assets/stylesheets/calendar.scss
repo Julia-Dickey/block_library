@@ -1,9 +1,17 @@
+$ltgrey: #f7f7f7;
 $grey: #636c72;
 $mdgrey: #C0C0C0;
-$ltgrey: #f7f7f7;
+$dkgrey: #616161;
+
 $ltblue: #589fb7;
 $blue: #3a87ad;
+$dkblue: #314B60;
+
 $action: #3a87ad;
+
+$hovergreen: #8baa55;
+$ltgreen: #9bba63;
+$green: #8aa55b;
 
 $bodyFontFamily: 'Open Sans', sans-serif;
 $headline: 'Roboto', serif;
@@ -13,6 +21,27 @@ form, table {
   color: $grey;
 }
 
+.modal-backdrop {
+   background-color: $dkblue;
+}
+
+.card-text {
+  font-family: $bodyFontFamily;
+}
+
+p.body-copy {
+  font-family: $bodyFontFamily !important;
+  font-weight: 300;
+  color: $dkgrey;
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+// 
+// .subhead {
+//   font-family: $headline !important;
+//   font-weight: 600;
+//   color: $blue;
+// }
 
 .btn-outline-success {
   border: 1px solid $action !important;
@@ -55,7 +84,7 @@ form, table {
   text-shadow: none;
 }
 h1.event-date {
-  color: $ltblue;
+  color: #E0EFEF;
   font-family: $headline !important;
   font-weight: 100 !important;
   letter-spacing: -3px;
@@ -76,10 +105,17 @@ h1.event-date {
   // line-height: 1;
   z-index: 1031;
   position: fixed;
+  background-color: $ltgreen !important;
+  border: 1px solid $ltgreen !important;
+  // top: 1rem;
+  // rigsht: -70px;
   &:hover {
     right: 0;
+    border: 1px solid $hovergreen !important;
+    background-color: $hovergreen;
   }
 }
+
 
 .col-sm-9 {
   margin: 40px auto;

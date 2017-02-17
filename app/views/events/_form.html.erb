@@ -3,61 +3,34 @@
   <%= form_for @event, remote: true do |f| %>
 
     <div class="field form-group text-uppercase">
-      <%= f.label :title, "Event title", style:"font-size: .75em" %>
+      <%= f.label :title, "Event title", class: "form-label", style:"font-size: .75em" %>
       <%= f.text_field :title, :class => "form-control" %>
     </div>
 
     <div class="field form-group text-uppercase">
       <%= f.radio_button :exclusive, true %>
-      <%= f.label :exclusive, "&nbsp; Members Only".html_safe, style:"font-size: .75em" %><br/>
+      <%= f.label :exclusive, "&nbsp; Members Only".html_safe, class: "form-label", style:"font-size: .75em" %><br/>
       <%= f.radio_button :exclusive, false %>
-      <%= f.label :exclusive, "&nbsp; Public Event".html_safe, style:"font-size: .75em" %>
+      <%= f.label :exclusive, "&nbsp; Public Event".html_safe, class: "form-label", style:"font-size: .75em" %>
     </div>
 
-    <div class="form-group">
-      <!-- <%= f.label :start, 'Begins', class:"text-uppercase", style:"font-size: .75em" %> -->
-      <label for=""class="text-uppercase" style="font-size: .75em">Starts</label>
-      <div class='input-group date' id='datetimepicker1'>
-        <input type='text' class="form-control text-uppercase"/>
-        <span class="input-group-addon">
-          <i class="fa fa-calendar" aria-hidden="true"></i>
-        </span>
-      </div>
+    <div class="field form-group text-uppercase" style="font-family:'Open Sans'">
+      <%= f.label :start, 'Begins', class: "form-label", style:"font-size: .75em" %><br/>
+      <%= f.datetime_select :start, :ampm => true, class: "form-control" %>
     </div>
-
-    <div class="form-group">
-      <label for=""class="text-uppercase" style="font-size: .75em">Ends</label>
-      <div class='input-group date' id='datetimepicker1'>
-        <input type='text' class="form-control text-uppercase" style="font-size: .75em" />
-        <span class="input-group-addon">
-          <i class="fa fa-calendar" aria-hidden="true"></i>
-        </span>
-      </div>
-    </div>
-
-    <!-- <div class="field form-group text-uppercase">
-      <%= f.label :start, 'Begins', style:"font-size: .75em" %>
-      <input value="" type="text" id="datepicker" class="date-fields"> -->
-      <!-- <%= f.datetime_field :start, class: "form-control date-fields" %> -->
-    <!-- </div> -->
-
-
-
-
-
-    <!-- <div class="field form-group text-uppercase">
-      <%= f.label :end, 'Ends', style:"font-size: .75em" %>
-      <%= f.datetime_field :end, class: "form-control date-fields" %>
-    </div> -->
 
     <div class="field form-group text-uppercase">
-      <%= f.label :body, "Description", style:"font-size: .75em" %>
+      <%= f.label :end, 'Ends', class: "form-label", style:"font-size: .75em" %><br/>
+      <%= f.datetime_select :end, :ampm => true, class: "form-control" %>
+    </div>
+
+    <div class="field form-group text-uppercase">
+      <%= f.label :body, "Description", class: "form-label", style:"font-size: .75em" %>
       <%= f.text_area :body, :class => "form-control", :style=>"height: 200px" %>
     </div>
 
     <div class="field form-group text-uppercase">
-      <%= f.label :color, 'Select a background color', style:"font-size: .75em"%><br/>
-      <!-- <%= f.color_field :color, class: "form-control color-field" %> -->
+      <%= f.label :color, 'Select a background color', class: "form-label", style:"font-size: .75em"%><br/>
       <input type="color" class="form-control" name="" value="#3a87ad">
     </div>
 
@@ -66,9 +39,4 @@
     </div>
 
   <% end %>
-  <script type="text/javascript">
-    $(function () {
-      $('#datetimepicker1').datetimepicker();
-    });
-  </script>
 </div>
