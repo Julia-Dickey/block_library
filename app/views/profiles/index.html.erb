@@ -1,113 +1,99 @@
 <%= link_to "+ &nbsp; Member".html_safe , new_profile_path, { class: "btn btn-success floating-button add-float text-white", :style => "z-index: 1; border-radius: 5px 0 0 5px", id: "new-profile", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#new-profile-modal'} %>
 
+
 <div class="background-grey">
-  <div class="sort-members py-2 shadow-nav hidden-sm-up" style="background-color:#353535">
-    <h3 class="pt-2 mx-4 text-white">Browse Members</h3>
-    <hr class="my-1">
-    <ul class="nav d-flex py-0 align-items-center">
-      <li class="nav-item ml-4">
-        <a class="nav-link active" href="#">A&mdash;Z</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Industry</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Stage</a>
-      </li>
-    </ul>
-  </div>
-  <div class="sort-members py-2 shadow-nav hidden-xs-down" style="background-color:#353535">
-    <ul class="nav d-flex py-0 align-items-center">
+  <div class="container">
+
+    <!-- <div class="sort-members py-2 shadow-nav hidden-sm-up" style="background-color:#353535">
       <h3 class="pt-2 mx-4 text-white">Browse Members</h3>
-      <li class="nav-item ml-4">
-        <a class="nav-link active" href="#">A&mdash;Z</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Industry</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Stage</a>
-      </li>
-    </ul>
-  </div>
+      <hr class="my-1">
+      <ul class="nav d-flex py-0 align-items-center">
+        <li class="nav-item ml-4">
+          <a class="nav-link active" href="#">A&mdash;Z</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Industry</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Stage</a>
+        </li>
+      </ul>
+    </div> -->
+    <div class="sort-members pt-4 ml-4">
+      <h3 class="pt-2 ml-2">Browse Members</h3>
+      <div class="d-flex row my-4" style="flex-wrap:nowrap">
+        <h5><strong><a class="mx-4" href="#">A&mdash;Z</a></strong></h5>
+        <h5><strong><a class="mr-4" href="#">Industry</a></strong></h5>
+        <h5><strong><a class="" href="#">Stage</a></strong></h5>
+      </div>
+      <hr>
+    </div>
 
 
-<div class="container-fluid hidden-sm-up text-muted">
-  <!-- <h3 class="pt-4">Member Directory</h3> -->
-  <div class="col-sm-6 directory shadow rounded list-group" style="border-top: 1px solid #ddd">
-    <% if @profiles.any? %>
-      <% @profiles.each do |profile| %>
-        <div class="list-group-item list-group-item-action pl-0 border-right-0 border-left-0">
-          <% if profile.status === "Survive" %>
-            <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-01.png" style="width: 2rem">
-          <% elsif profile.status === "Strive" %>
-            <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-02.png" style="width: 2rem">
-          <% elsif profile.status == "Thrive" %>
-            <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-03.png" style="width: 2rem">
-          <% end %>
-          <h4 class="mb-0 ml-0"><%= link_to profile.company, profile_path(profile), :class => "text-muted pl-3 list-members" %></h4>
-
-        </div>
-
+  <div class="container hidden-sm-up text-muted">
+    <!-- <h3 class="pt-4">Member Directory</h3> -->
+    <div class="col-sm-6 directory shadow rounded list-group" style="border-top: 1px solid #ddd">
+      <% if @profiles.any? %>
+        <% @profiles.each do |profile| %>
+          <div class="list-group-item list-group-item-action pl-0 border-right-0 border-left-0">
+            <% if profile.status === "Survive" %>
+              <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-01.png" style="width: 2rem">
+            <% elsif profile.status === "Strive" %>
+              <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-02.png" style="width: 2rem">
+            <% elsif profile.status == "Thrive" %>
+              <img class="card-profile-img rounded-circle ml-3 hidden-md-up" src="../images/starve_ups_stage-03.png" style="width: 2rem">
+            <% end %>
+            <h4 class="mb-0 ml-0"><%= link_to profile.company, profile_path(profile), :class => "text-muted pl-3 list-members" %></h4>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
 
-<div class="container-fluid mx-4 hidden-xs-down text-muted">
-  <div class="card-group">
-    <!-- <div class="row">
-      <h3 class="mt-4 mb-3">Member Directory</h3>
-    </div> -->
-    <!-- <div class="row">
-      <a href="#">INDUSTRY</a> |
-      <a href="#">STAGE</a> |
-      <a href="#">A&emdash;Z</a>
-
-    </div> -->
-    <div class="row d-flex flex-wrap text-center mt-4">
-    <% if @profiles.any? %>
-      <div class="row">
-
-          <% @profiles.each do |profile| %>
-            <div class="col-md-3 mb-4">
-              <div class="card text-muted shadow" style="border-radius: 8px">
-                <img class="card-img-top hidden-xs-down white-border" style="background-image: url(../images/profile_preview2.png); height: 100px; width: auto; border-radius: 8px 8px 0 0" alt="">
-                <div class="card-block pb-0">
-                  <% if profile.status === "Survive" %>
-                    <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down white-border" src="../images/starve_ups_stage-01.png" style="width: 50px; margin-top: -4rem">
-                  <% elsif profile.status === "Strive" %>
-                    <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down white-border" src="../images/starve_ups_stage-02.png" style="width: 50px; margin-top: -4rem">
-                  <% elsif profile.status == "Thrive" %>
-                    <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down white-border" src="../images/starve_ups_stage-03.png" style="width: 50px; margin-top: -4rem">
-                  <% end %>
-                  <h4 class="card-title mb-2"><%= link_to profile.company, profile_path(profile)%></h4>
-                  <p class="card-text" style=""><%= profile.industry %></p>
+  <div class="container mx-4 hidden-xs-down text-muted">
+    <div class="card-group">
+      <div class="row d-flex flex-wrap text-center mt-4">
+        <% if @profiles.any? %>
+          <div class="row">
+            <% @profiles.each do |profile| %>
+              <div class="col-md-3 mb-4">
+                <div class="card text-muted shadow" style="border-radius: 8px">
+                  <img class="card-img-top hidden-xs-down white-border" style="background-image: url(../images/profile_preview2.png); height: 100px; width: auto; border-radius: 8px 8px 0 0" alt="">
+                  <div class="card-block pb-0">
+                    <% if profile.status === "Survive" %>
+                      <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down white-border" src="../images/starve_ups_stage-01.png" style="width: 50px; margin-top: -4rem">
+                    <% elsif profile.status === "Strive" %>
+                      <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down white-border" src="../images/starve_ups_stage-02.png" style="width: 50px; margin-top: -4rem">
+                    <% elsif profile.status == "Thrive" %>
+                      <img class="card-profile-img rounded-circle shadow-nav hidden-xs-down white-border" src="../images/starve_ups_stage-03.png" style="width: 50px; margin-top: -4rem">
+                    <% end %>
+                    <h4 class="card-title mb-2"><%= link_to profile.company, profile_path(profile)%></h4>
+                    <p class="card-text" style=""><%= profile.industry %></p>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="new-profile-modal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">New Member Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="new-profile-form">
-        <%= render "form" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <div class="modal fade" id="new-profile-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">New Member Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="new-profile-form">
+          <%= render "form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
 </div>
