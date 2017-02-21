@@ -199,6 +199,7 @@ h3 {
 
 .floating-button {
   position: fixed;
+  z-index: 1031 !important;
   &:hover {
     right: 0;
   }
@@ -273,10 +274,9 @@ p {
 }
 
 .shadow-left {
-  box-shadow: 2px 0 10px 1px #e8e8e8;
-
-  -moz-box-shadow: 2px 0 10px 1px #e8e8e8;
-  -webkit-box-shadow: 2px 0 10px 1px #e8e8e8;
+  box-shadow: 2px 0 10px 1px #5e5e5e;
+  -moz-box-shadow: 2px 0 10px 1px #5e5e5e;
+  -webkit-box-shadow: 2px 0 10px 1px #5e5e5e;
 }
 
 .label {

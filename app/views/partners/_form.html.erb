@@ -1,5 +1,5 @@
-<%= form_for(partner) do |f| %>
-  <% if partner.errors.any? %>
+<%= form_for(@partner) do |f| %>
+  <% if @partner.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(partner.errors.count, "error") %> prohibited this partner from being saved:</h2>
 
