@@ -76,8 +76,8 @@
     <button class="navbar-toggler navbar-toggler-right mt-2" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand hidden-md-down" href="#"><img src="../images/logo_grey.png" alt="StarveUps logo" style="width: 200px; margin-bottom:-60px"></a>
-    <a class="navbar-brand hidden-lg-up" href="#"><img src="../images/logo_grey.png" alt="StarveUps logo" style="width: 150px; margin-bottom:-50px"></a>
+    <a class="navbar-brand hidden-md-down" href="/pages/home"><img src="../images/logo_grey.png" alt="StarveUps logo" style="width: 200px; margin-bottom:-60px"></a>
+    <a class="navbar-brand hidden-lg-up" href="/pages/home"><img src="../images/logo_grey.png" alt="StarveUps logo" style="width: 150px; margin-bottom:-50px"></a>
 
     <div class="collapse navbar-collapse mt-4" id="navbarText">
       <ul class="navbar-nav mr-auto d-flex justify-content-end">
@@ -86,13 +86,13 @@
           <a class="nav-link active pl-0 ml-0" href="#">ABOUT</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">MEMBERS</a>
+          <%= link_to 'MEMBERS', profiles_path, :class=>"nav-link" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">CHAPTERS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">EVENTS</a>
+          <%= link_to 'EVENTS', events_path, :class=>"nav-link" %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">PARTNERS</a>
@@ -113,7 +113,7 @@
 
 
 
-  <body class="background-grey" style="margin-top: 8rem">
+  <body class="background-grey" style="margin-top: 10rem">
 
     <%= yield %>
   </body>
@@ -128,7 +128,7 @@
       <h5><a href="https://www.pinterest.com/starveups/" target="_blank" class="icon white-text px-2"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></h5>
 
     </div>
-    <div class="container text-center" style="font-size:.75em">
+    <div class="container text-center" style="font-size:.75em; letter-spacing:.5px">
       <!-- <p class="text-white"><strong>Starve Ups</strong></p> -->
       <p>&copy;2017 Starve Ups. All Rights Reserved.</p>
 
