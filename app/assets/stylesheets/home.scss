@@ -60,4 +60,24 @@ iframe#bg-video {
   }
 }
 
+.hoverpartner {
+  display:none;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  color: white;
+  background-color: rgba(25, 25, 25, 0.8);
+  a {
+    color: white;
+  }
+}
+
+.partner {
+  &:hover {
+    .hoverpartner {
+      display: block;
+    }
+  }
+}
 // TO_DO FIX AUTOPLAY http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video

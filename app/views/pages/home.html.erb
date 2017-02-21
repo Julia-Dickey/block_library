@@ -108,6 +108,31 @@
 </div>
 
 
+<!-- STRATEGIC PARNTER logo block  -->
+<div class="block" id="partners" style="background-color:#f4f4f4">
+  <div class="container">
+    <div class="row">
+      <h1 class="mx-auto mb-4">Strategic Partners</h1>
+    </div>
+    <div class="row text-center">
+      <% if @partners.any? %>
+        <% @partners.each do |partner| %>
+          <div class="col-sm-3 partner px-auto text-center py-4" style="position:relative">
+            <h5 class="my-4"><%= partner.company %></h5>
+            <div class="hoverpartner rounded my-auto py-4">
+              <p><%= link_to partner.partnership, partner_path(partner), :class=>"my-auto py-4" %></p>
+              <!-- <p class="my-auto py-4"><%= partner.partnership %></p> -->
+            </div>
+          </div>
+        <% end %>
+        <% else %>
+        There are no Partners in the directory.
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
 <!-- ADDRESS BLOCK -->
 <div class="block text-center text-white" style="padding:120px 0 120px 0; background-color: #295D85">
   <div class="container my-auto">
