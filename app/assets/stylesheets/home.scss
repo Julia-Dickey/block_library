@@ -1,5 +1,14 @@
+
+
+.icon.white-text {
+  color: $ltblue !important;
+  &:hover {
+    color: $blue !important;
+  }
+}
+
 .opacity-layer {
-    background-color: rgba(25, 25, 25, 0.8);
+    background-color: rgba(25, 25, 25, 0.5);
     position: absolute;
     top: 0;
     left: 0;
@@ -15,22 +24,14 @@ p {
   font-family: $bodyFontFamily
 }
 
+h1 {
+  font-weight: 300;
+  color: $dkgrey;
+}
+
 h3 {
   letter-spacing: .5px;
 }
-
-// .block-inverse {
-  // position: relative;
-//   margin-top: -25px;
-// }
-
-// .block-background {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: auto;
-// }
 
 iframe#bg-video {
   position: fixed;
@@ -49,11 +50,14 @@ iframe#bg-video {
   background-size: cover;
 }
 
-// @media screen and (max-device-width: 800px) {
-//   html {
-//     background: url(polina.jpg) #000 no-repeat center center fixed;
-//   }
-//   #bg-video {
-//     display: none;
-//   }
-// }
+// TO_DO_JD ADD FRAME FOR MOBILE DEVICES
+@media screen and (max-device-width: 800px) {
+  html {
+    background: url(polina.jpg) #000 no-repeat center center fixed;
+  }
+  #bg-video {
+    display: none;
+  }
+}
+
+// TO_DO FIX AUTOPLAY http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video

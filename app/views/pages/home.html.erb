@@ -18,27 +18,26 @@
     <!-- <source src="https://player.vimeo.com/video/119810871" type="video/mp4">
 </video> -->
 <div class="container-flex">
-  <div class="text-center mb-4" style="margin-top:-25px; padding-top:120px; padding-bottom:120px">
+  <div class="text-center mb-4" style="margin-top:-25px; padding-top:100px; padding-bottom:120px">
     <div class="block-foreground py-4">
       <h1 class="block-title text-white" style="letter-spacing:1px">Oregon's Startup Scalerator</h1>
-      <h4 class="text-white" style="letter-spacing:1px">THE END-TO-END ACCELERATOR FOR FOUNDERS &amp; STARTUPS</h4>
+      <h3 class="text-white" style="letter-spacing:1px">THE END-TO-END ACCELERATOR FOR FOUNDERS &amp; STARTUPS</h3>
     </div>
     <div class="opacity-layer" >
       <iframe muted autoplay id="bg-video" src="https://vimeo.com/119810871" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
-
   </div>
-
 </div>
 
 
 <!-- ABOUT BLOCK -->
-<div class="container-fluid" style="background-color:#f4f4f4">
+<div class="container-fluid" style="background-color:white">
+<!-- <div class="block"> -->
 
   <div class="container my-4" >
     <div class="row">
       <div class="col-sm-6 my-auto">
-        <h3>About Starve Ups</h3>
+        <h1>About Starve Ups</h1>
         <p>The only scalerator in Oregon for disruptive entrepreneurs in every industry. Starveups statistically changes the game for founders by increasing their likelihood of success. Our full-cycle approach and peer-to-peer mentorship method has been proven to help founders succeed. </p>
 
         <p><strong class="mt-4" style="color:#616161">Compared to national startup averages, Starveups member companies are:</strong></p>
@@ -62,7 +61,30 @@
         <img src="../images/starveups_cycle.png" alt="Starveups businesses move from the stages of Survive to Strive to Thrive">
       </div>
     </div>
+  <!-- </div> -->
+</div>
+
+
+
+<!-- MEMBERS logo block  -->
+<div class="block" style="background-color:#f4f4f4">
+  <div class="container">
+    <div class="row">
+      <h1 class="mx-auto mb-4">Member Companies</h1>
+    </div>
+    <div class="row text-center">
+      <% if @members.any? %>
+        <% @members.each do |member| %>
+          <div class="col-sm-3 px-auto text-center py-4">
+            <h5><%= member.company %></h5>
+          </div>
+        <% end %>
+        <% else %>
+        There are no members in the directory.
+      <% end %>
+    </div>
   </div>
+</div>
 
   <!-- SUBSCRIPTION BLOCK -->
   <div class="block text-center" style="padding:120px 0 120px 0; background-color: white">
