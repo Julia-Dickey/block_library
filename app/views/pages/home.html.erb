@@ -1,67 +1,90 @@
 <!-- VIDEO BLOCK -->
-<div class="block block-inverse text-center mb-4" style="margin-top:-25px">
+<!-- <div class="block block-inverse text-center mb-4" style="margin-top:-25px">
   <div class="block-foreground">
     <h1 class="block-title" style="letter-spacing:1px">Oregon's Startup Scalerator</h1>
     <h4 class="text-muted" style="letter-spacing:1px">THE END-TO-END ACCELERATOR FOR FOUNDERS &amp; STARTUPS</h4>
   </div>
-  <!-- <div class="block-background" style="position:relative">
+  <div class="block-background" style="position:relative">
     <div class="opacity-layer">
       <iframe src="https://player.vimeo.com/video/119810871?title=0&byline=0&portrait=0" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
-  </div> -->
-</div>
+  </div>
+</div> -->
 <!-- <button class="btn btn-secondary btn-outline-secondary mt-1">With a simple button</button> -->
 
+<!-- <video playsinline autoplay muted loop poster="../images/placeholder_shaded.png" id="bgvid"> -->
+<!-- <video playsinline autoplay muted loop id="bgvid"> -->
+    <!-- <source src="https://player.vimeo.com/video/119810871?title=0&byline=0&portrait=0" type="video/webm"> -->
+    <!-- <source src="https://player.vimeo.com/video/119810871" type="video/mp4">
+</video> -->
+<div class="container-flex">
+  <div class="text-center mb-4" style="margin-top:-25px; padding-top:120px; padding-bottom:120px">
+    <div class="block-foreground py-4">
+      <h1 class="block-title text-white" style="letter-spacing:1px">Oregon's Startup Scalerator</h1>
+      <h4 class="text-white" style="letter-spacing:1px">THE END-TO-END ACCELERATOR FOR FOUNDERS &amp; STARTUPS</h4>
+    </div>
+    <div class="opacity-layer" >
+      <iframe muted autoplay id="bg-video" src="https://vimeo.com/119810871" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+</div>
+
+
 <!-- ABOUT BLOCK -->
+<div class="container-fluid" style="background-color:#f4f4f4">
 
-<div class="container my-4">
-  <div class="row">
-    <div class="col-sm-6 my-auto">
-      <h3>About Starve Ups</h3>
-      <p>The only scalerator in Oregon for disruptive entrepreneurs in every industry. Starveups statistically changes the game for founders by increasing their likelihood of success. Our full-cycle approach and peer-to-peer mentorship method has been proven to help founders succeed. </p>
+  <div class="container my-4" >
+    <div class="row">
+      <div class="col-sm-6 my-auto">
+        <h3>About Starve Ups</h3>
+        <p>The only scalerator in Oregon for disruptive entrepreneurs in every industry. Starveups statistically changes the game for founders by increasing their likelihood of success. Our full-cycle approach and peer-to-peer mentorship method has been proven to help founders succeed. </p>
 
-      <p><strong class="mt-4" style="color:#616161">Compared to national startup averages, Starveups member companies are:</strong></p>
-      <div class="row d-flex mt-4" style="flex-wrap:nowrap">
-        <div class="col-sm-4">
-          <h1 class="text-center" style="font-size: 4em"><i class="fa fa-line-chart text-blue" aria-hidden="true"></i><br/></h1>
-          <p class="text-blue mb-4"><strong>6x more likely to stay in business</strong></p>
+        <p><strong class="mt-4" style="color:#616161">Compared to national startup averages, Starveups member companies are:</strong></p>
+        <div class="row d-flex mt-4" style="flex-wrap:nowrap">
+          <div class="col-sm-4">
+            <h1 class="text-center" style="font-size: 4em"><i class="fa fa-line-chart text-blue" aria-hidden="true"></i><br/></h1>
+            <p class="text-blue mb-4"><strong>6x more likely to stay in business</strong></p>
+          </div>
+          <div class="col-sm-4">
+            <h1 class="text-center" style="font-size: 4em"><i class="fa fa-usd text-blue" aria-hidden="true"></i></h1>
+            <p class="text-blue mb-4"><strong>5x more likely to raise funding</strong></p>
+          </div>
+          <div class="col-sm-4">
+            <h1 class="text-center" style="font-size: 4em"><i class="fa fa-handshake-o text-blue" aria-hidden="true"></i></h1>
+            <p class="text-blue mb-4"><strong>Nearly 3.5x more likely to exit</strong></p>
+          </div>
         </div>
-        <div class="col-sm-4">
-          <h1 class="text-center" style="font-size: 4em"><i class="fa fa-usd text-blue" aria-hidden="true"></i></h1>
-          <p class="text-blue mb-4"><strong>5x more likely to raise funding</strong></p>
-        </div>
-        <div class="col-sm-4">
-          <h1 class="text-center" style="font-size: 4em"><i class="fa fa-handshake-o text-blue" aria-hidden="true"></i></h1>
-          <p class="text-blue mb-4"><strong>Nearly 3.5x more likely to exit</strong></p>
-        </div>
+
       </div>
-
+      <div class="col-sm-6">
+        <img src="../images/starveups_cycle.png" alt="Starveups businesses move from the stages of Survive to Strive to Thrive">
+      </div>
     </div>
-    <div class="col-sm-6">
-      <img src="../images/starveups_cycle.png" alt="Starveups businesses move from the stages of Survive to Strive to Thrive">
+  </div>
+
+  <!-- SUBSCRIPTION BLOCK -->
+  <div class="block text-center" style="padding:120px 0 120px 0; background-color: white">
+    <div class="container-fluid my-auto">
+      <h1 class="mb-4 text-blue">
+        Don't miss our next event
+      </h1>
+      <form class="form-inline d-flex justify-content-center">
+        <div class="input-group input-group-lg">
+          <div class="input-group mb-2" >
+            <input type="text" class="form-control" placeholder="Email" id="sizing-addon1">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </span>
+          </div>
+        </div>
+      </form>
+      <span class="text-muted mt-2"><strong>We respect privacy.</strong> And never share your email address.</span>
     </div>
   </div>
 </div>
 
-<!-- SUBSCRIPTION BLOCK -->
-<div class="block text-center" style="padding:120px 0 120px 0; background-color: white">
-  <div class="container-fluid my-auto">
-    <h1 class="mb-4 text-blue">
-      Don't miss our next event
-    </h1>
-    <form class="form-inline d-flex justify-content-center">
-      <div class="input-group input-group-lg">
-        <div class="input-group mb-2" >
-          <input type="text" class="form-control" placeholder="Email" id="sizing-addon1">
-          <span class="input-group-btn">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </span>
-        </div>
-      </div>
-    </form>
-    <span class="text-muted mt-2"><strong>We respect privacy.</strong> And never share your email address.</span>
-  </div>
-</div>
 
 <!-- ADDRESS BLOCK -->
 <div class="block text-center text-white" style="padding:120px 0 120px 0; background-color: #295D85">
