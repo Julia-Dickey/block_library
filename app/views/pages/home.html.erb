@@ -32,7 +32,7 @@
 
 <!-- ABOUT BLOCK -->
 <div class="container-fluid" id="about" style="background-color:#f4f4f4">
-  <div class="container my-4" >
+  <div class="container " >
     <div class="row">
       <div class="col-sm-6 my-auto">
         <h1 style="color:#616161">About Starve Ups</h1>
@@ -68,6 +68,29 @@
   </div>
     <div class="row">
       <h1 class="mx-auto mb-4">Member Companies</h1>
+    </div>
+    <div class="row text-center">
+      <% if @members.any? %>
+        <% @members.each do |member| %>
+          <div class="col-sm-3 px-auto text-center py-4">
+            <h5><%= member.company %></h5>
+          </div>
+        <% end %>
+        <% else %>
+        There are no members in the directory.
+      <% end %>
+    </div>
+  <!-- </div> -->
+</div>
+
+<!-- EVENT block  -->
+<div class="block" style="background:url(../images/homebg2.jpg); background-attachment: fixed; background-size: auto">
+  <!-- <div class="container"> -->
+  <div class="col-sm-8 col-sm-offset-2">
+
+  </div>
+    <div class="row">
+      <h1 class="mx-auto mb-4">Don't Miss Our Next Event</h1>
     </div>
     <div class="row text-center">
       <% if @members.any? %>
