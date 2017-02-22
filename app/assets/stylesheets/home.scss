@@ -8,7 +8,7 @@
 }
 
 .opacity-layer {
-    background-color: rgba(25, 25, 25, 0.5);
+    background-color: rgba(25, 25, 25, 0.7);
     position: absolute;
     top: 0;
     left: 0;
@@ -16,8 +16,26 @@
     height: 100%;
 }
 
+.small {
+  font-size: 1em;
+}
+
 $bodyFontFamily: 'Open Sans', sans-serif;
 $headline: 'Roboto', serif;
+
+.btn-primary {
+  background-color: $blue;
+  &:hover {
+    background-color: $dkblue;
+  }
+}
+
+a {
+  color: $ltblue;
+  &:hover {
+    color: $dkblue;
+  }
+}
 
 p {
   font-size: 1.25em;
@@ -31,6 +49,14 @@ h1 {
 
 h3 {
   letter-spacing: .5px;
+}
+
+a.nav-link {
+  color: white;
+  &:hover {
+    color: $ltblue !important;
+    border-bottom: 1px solid $ltblue;
+  }
 }
 
 iframe#bg-video {
