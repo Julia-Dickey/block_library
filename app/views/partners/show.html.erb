@@ -1,11 +1,5 @@
 <div class="background-grey" style="margin-top:-50px">
   <div class="sort-members shadow-nav" style="background-color:#353535">
-    <!-- <ul class="nav flex-row align-items-center">
-      <li class="nav-item ml-4">
-        <%= link_to '< Member Directory', profiles_path, :class=>"nav-link" %>
-      </li>
-    </ul> -->
-
   </div>
 </div>
 
@@ -25,13 +19,10 @@
       <p class="label mb-0 px-3 " style=""><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
       <p class="mb-3 px-3 summary-text" style="font-size: 1em">
         <%= @partner.industry %></p>
-
       <p class="label mb-0 px-3" style=""><i class="fa fa-users" aria-hidden="true"></i>&nbsp; <strong>PARTNER SINCE:</strong></p>
       <p class="mb-3 px-3 summary-text"> <%= @partner.since %></p>
-
       <p class="label mb-0 px-3" style=""><strong><i class="fa fa-laptop" aria-hidden="true"></i>&nbsp;WEBSITE:</strong></p>
       <p class="label px-3"><%= link_to @partner.website, :target => "_blank"%></p>
-
       <div class="color-block blue-shadow mt-4 px-3 py-3">
         <!-- <img src="../images/founders.jpeg" class="px-3" style="margin-top: -4" alt=""> -->
         <h5 class="subhead pb-0"><%= @partner.company %></h5>

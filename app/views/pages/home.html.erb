@@ -31,44 +31,41 @@
 
 
 <!-- ABOUT BLOCK -->
-<div class="container-fluid" id="about" style="background-color:white">
-<!-- <div class="block"> -->
-
+<div class="container-fluid" id="about" style="background-color:#f4f4f4">
   <div class="container my-4" >
     <div class="row">
       <div class="col-sm-6 my-auto">
-        <h1>About Starve Ups</h1>
-        <p>The only scalerator in Oregon for disruptive entrepreneurs in every industry. Starveups statistically changes the game for founders by increasing their likelihood of success. Our full-cycle approach and peer-to-peer mentorship method has been proven to help founders succeed. </p>
-
-        <p><strong class="mt-4" style="color:#616161">Compared to national startup averages, Starveups member companies are:</strong></p>
+        <h1 style="color:#616161">About Starve Ups</h1>
+        <p class="mb-4" style="color:#616161">The only scalerator in Oregon for disruptive entrepreneurs in every industry. Starveups statistically changes the game for founders by increasing their likelihood of success. Our full-cycle approach and peer-to-peer mentorship method has been proven to help founders succeed. </p>
+        <p class="mt-4" style="color:#616161">Compared to national startup averages, Starveups member companies are:</p>
         <div class="row d-flex mt-4" style="flex-wrap:nowrap">
           <div class="col-sm-4">
-            <h1 class="text-center" style="font-size: 4em"><i class="fa fa-line-chart text-blue" aria-hidden="true"></i><br/></h1>
+            <h1 class="text-center" style="font-size: 3em"><i class="fa fa-line-chart text-blue" aria-hidden="true"></i><br/></h1>
             <p class="text-blue text-center mb-4">6x more likely to stay in business</p>
           </div>
           <div class="col-sm-4">
-            <h1 class="text-center" style="font-size: 4em"><i class="fa fa-usd text-blue" aria-hidden="true"></i></h1>
+            <h1 class="text-center" style="font-size: 3em"><i class="fa fa-usd text-blue" aria-hidden="true"></i></h1>
             <p class="text-blue text-center mb-4">5x more likely to raise funding</p>
           </div>
           <div class="col-sm-4">
-            <h1 class="text-center" style="font-size: 4em"><i class="fa fa-handshake-o text-blue" aria-hidden="true"></i></h1>
+            <h1 class="text-center" style="font-size: 3em"><i class="fa fa-handshake-o text-blue" aria-hidden="true"></i></h1>
             <p class="text-blue text-center mb-4">Nearly 3.5x more likely to exit</p>
           </div>
         </div>
-
       </div>
       <div class="col-sm-6">
         <img src="../images/starveups_cycle.png" alt="Starveups businesses move from the stages of Survive to Strive to Thrive">
       </div>
     </div>
-  <!-- </div> -->
+  </div>
 </div>
 
-
-
 <!-- MEMBERS logo block  -->
-<div class="block" style="background-color:#f4f4f4">
-  <div class="container">
+<div class="block">
+  <!-- <div class="container"> -->
+  <div class="col-sm-8 col-sm-offset-2">
+
+  </div>
     <div class="row">
       <h1 class="mx-auto mb-4">Member Companies</h1>
     </div>
@@ -81,6 +78,30 @@
         <% end %>
         <% else %>
         There are no members in the directory.
+      <% end %>
+    </div>
+  <!-- </div> -->
+</div>
+
+<!-- STRATEGIC PARNTER logo block  -->
+<div class="block" id="partners" style="background-color:#f4f4f4">
+  <div class="container">
+    <div class="row">
+      <h1 class="mx-auto mb-4">Strategic Partners</h1>
+    </div>
+    <div class="row text-center mb-4">
+      <% if @partners.any? %>
+        <% @partners.each do |partner| %>
+          <div class="col-sm-3 partner px-auto text-center py-4" style="position:relative">
+            <h5 class="my-4"><%= partner.company %></h5>
+            <div class="hoverpartner col-sm-12 text-center rounded">
+              <p class="text-center"><%= link_to partner.partnership, partner_path(partner), :class=>"my-auto" %></p>
+              <!-- <p class="my-auto py-4"><%= partner.partnership %></p> -->
+            </div>
+          </div>
+        <% end %>
+        <% else %>
+        There are no Partners in the directory.
       <% end %>
     </div>
   </div>
@@ -108,33 +129,11 @@
 </div>
 
 
-<!-- STRATEGIC PARNTER logo block  -->
-<div class="block" id="partners" style="background-color:#f4f4f4">
-  <div class="container">
-    <div class="row">
-      <h1 class="mx-auto mb-4">Strategic Partners</h1>
-    </div>
-    <div class="row text-center">
-      <% if @partners.any? %>
-        <% @partners.each do |partner| %>
-          <div class="col-sm-3 partner px-auto text-center py-4" style="position:relative">
-            <h5 class="my-4"><%= partner.company %></h5>
-            <div class="hoverpartner rounded my-auto py-4">
-              <p><%= link_to partner.partnership, partner_path(partner), :class=>"my-auto py-4" %></p>
-              <!-- <p class="my-auto py-4"><%= partner.partnership %></p> -->
-            </div>
-          </div>
-        <% end %>
-        <% else %>
-        There are no Partners in the directory.
-      <% end %>
-    </div>
-  </div>
-</div>
+
 
 
 <!-- ADDRESS BLOCK -->
-<div class="block text-center text-white" style="padding:120px 0 120px 0; background-color: #295D85">
+<div class="block text-center text-white" id="contact" style="padding:120px 0 120px 0; background-color: #295D85">
   <div class="container my-auto">
     <div class="row">
       <div class="col-sm-4">

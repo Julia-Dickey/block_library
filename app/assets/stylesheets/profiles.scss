@@ -274,9 +274,9 @@ p {
 }
 
 .shadow-left {
-  box-shadow: 2px 0 10px 1px #5e5e5e;
-  -moz-box-shadow: 2px 0 10px 1px #5e5e5e;
-  -webkit-box-shadow: 2px 0 10px 1px #5e5e5e;
+  box-shadow: -3px 0 3px -1px #bfbfbf;
+  -moz-box-shadow: -3px 0 10px -1px #bfbfbf;
+  -webkit-box-shadow: -3px 0 10px -1px #bfbfbf;
 }
 
 .label {
@@ -298,7 +298,7 @@ li.nav-item {
     &:hover {
       color: $ltblue;
     }
-    &.active {
+    &:active {
       color: $ltblue !important;
       font-weight: 600;
     }
