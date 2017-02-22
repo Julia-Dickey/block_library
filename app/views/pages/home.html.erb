@@ -86,23 +86,36 @@
 <!-- EVENT block  -->
 <div class="block" style="background:url(../images/homebg2.jpg); background-attachment: fixed; background-size: auto">
   <!-- <div class="container"> -->
-  <div class="col-sm-8 col-sm-offset-2">
-
-  </div>
+  <div class="col-sm-8 offset-sm-2">
     <div class="row">
-      <h1 class="mx-auto mb-4">Don't Miss Our Next Event</h1>
+      <h1 class="mx-auto mb-4 text-white text-shadow">Don't Miss Our Next Event</h1>
     </div>
     <div class="row text-center">
-      <% if @members.any? %>
-        <% @members.each do |member| %>
-          <div class="col-sm-3 px-auto text-center py-4">
-            <h5><%= member.company %></h5>
+      <% if @events.any? %>
+        <% @events.each do |event| %>
+          <div class="col-sm-4 rounded text-muted" >
+            <div class="rounded-top" style="background:white">
+              <img src="../images/event.png" alt="" style="width: 100%" class="px-3 pt-3">
+            </div>
+            <div class="rounded-bottom" style="background: white; height: 15rem">
+              <h2 class="py-3"><%= link_to event.title, event_path(event) %></h2>
+              <!-- <h2 class="pt-3"><%= event.title %></h2> -->
+              <p class="px-3"><strong><%= event.start.strftime("%m/%d")%> | <%= event.chapter %> |
+                <% if event.exclusive %>
+                  PRIVATE</strong>
+                <% else %>
+                  PUBLIC</strong>
+                <% end %>
+              <p class="px-3"><%= event.body %></p>
+            </div>
           </div>
         <% end %>
         <% else %>
         There are no members in the directory.
       <% end %>
     </div>
+  </div>
+
   <!-- </div> -->
 </div>
 

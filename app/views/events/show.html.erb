@@ -1,4 +1,4 @@
-<div class="background-grey">
+<!-- <div class="background-grey">
   <div class="sort-members shadow-nav" style="background-color:#353535">
     <ul class="nav flex-row align-items-center">
       <li class="nav-item ml-4">
@@ -7,7 +7,7 @@
     </ul>
 
   </div>
-</div>
+</div> -->
 
 <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; Edit'.html_safe, edit_event_path(@event), :class=> "btn btn-info edit-float floating-button text-white", :style => "border-radius: 5px 0 0 5px", id: "edit-event", :remote => true, 'data-toggle' =>  "modal", 'data-target' => '#edit-event-modal' %>
 
@@ -21,9 +21,9 @@
     <a href="/events"><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></a>
   </div> -->
 
-  <h3 class="my-4 text-blue" style="">
+  <h1 class="my-4 text-blue" style="">
     <%= @event.title %>
-  </h3>
+  </h1>
   <p class="mt-4" style=""><strong>
     March 8, 2017<br/>
     6&mdash;8:00PM |
