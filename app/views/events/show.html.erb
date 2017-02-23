@@ -24,7 +24,7 @@
   <h1 class="my-4 text-blue" style="">
     <%= @event.title %>
   </h1>
-  <p class="mt-4" style=""><strong>
+  <p class="mt-4" style="">
     March 8, 2017<br/>
     6&mdash;8:00PM |
     <!-- <%= @event.start.hour %>:<br/>
@@ -32,10 +32,11 @@
   <% if @event.exclusive %>
     Members only<br/>
   <% else %>
-    <span class="text-uppercase">Public event</span><br/>
+    <span class="">Public event</span>
   <% end %>
+    | <%= @event.chapter %><br/>
     <%= @event.location %>
-  <strong></p>
+  </p>
   <hr class="my-4">
   <h5 class="text-blue mb-0 subhead" style="">Details:</h5><br/>
   <p class="body-copy">
