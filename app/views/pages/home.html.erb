@@ -105,11 +105,11 @@
             </div>
             <div class="rounded-bottom" style="background: white; height: 12rem; position:relative">
               <h2 class="py-3 px-3"><%= link_to event.title, event_path(event) %></h2>
-              <p class="px-3 small center-text" style="position:absolute; bottom:1rem; left:0; width: 100%"><strong><%= event.start.strftime("%m/%d")%> | <%= event.chapter %> |
+              <p class="px-3 small center-text" style="position:absolute; bottom:1rem; left:0; width: 100%"><%= event.start.strftime("%m/%d")%> | <%= event.chapter %> |
                 <% if event.exclusive %>
-                  PRIVATE</strong>
+                  PRIVATE
                 <% else %>
-                  PUBLIC</strong>
+                  PUBLIC
                 <% end %>
               <!-- <p class="px-3"><%= event.body %></p> -->
             </div>
@@ -168,6 +168,67 @@
     </div>
   </div>
 </div>
+
+<!-- MAP BLOCK -->
+<div id='map'>
+
+  <script>
+  $(document).ready(function() {
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA';
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/dark-v9', //hosted style id
+      center: [-77.38, 39], // starting position
+      zoom: 9 // starting zoom
+    });
+  })
+  </script>
+</div>
+
+
+  <!-- // $.ajax({
+  //   dataType: 'text',
+  //   url: 'happy_hours/happening_now.json',
+  //   success: function(data) {
+  //     var geojson;
+  //     geojson = $.parseJSON(data);
+  //     return map.featureLayer.setGeoJSON(geojson);
+  //   }
+  // });
+
+// # add custom popups to each marker
+  // map.featureLayer.on('layeradd', function(e) {
+  //   var marker, properties;
+  //   marker = e.layer;
+  //   return properties = marker.feature.properties;
+  // });
+
+  // # create custom popup
+  // var popupContent;
+  //
+  // popupContent = '<div class="popup">' + '<h3>' + properties.name + '</h3>' + '<p>' + properties.address + '</p>' + '</div>';
+  //
+  // marker.bindPopup(popupContent, {
+  //   closeButton: false,
+  //   minWidth: 320
+  // });
+
+// # handles a sidebar happy hour click
+  // $('article li').click(function(e) {
+  //   var current, currentlyClickedName;
+  //   current = $(this);
+  //   return currentlyClickedName = current.find('h2').text();
+  // });
+
+// # opens/closes popup for currently clicked happy hour
+  // map.featureLayer.eachLayer(function(marker) {
+  //   var id;
+  //   if (marker.feature.properties.name === currentlyClickedName) {
+  //     id = layer._leaflet_id;
+  //     return map._layers[id].openPopup();
+  //   }
+  // }); -->
+
 
 
 
