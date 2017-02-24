@@ -5,31 +5,11 @@
     <h4 class="text-white" style="letter-spacing:1px">THE END-TO-END ACCELERATOR FOR FOUNDERS &amp; STARTUPS</h4>
   </div>
   <div class="block-background">
-    <iframe id="bgvideo"  src="https://player.vimeo.com/video/119810871?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe id="bgvideo"  src="https://player.vimeo.com/video/119810871?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     <div class="opacity-layer">
     </div>
   </div>
 </div>
-
-<!-- <video playsinline autoplay muted loop poster="../images/placeholder_shaded.png" id="bgvid"> -->
-<!-- <video playsinline autoplay muted loop id="bgvid"> -->
-    <!-- <source src="https://player.vimeo.com/video/119810871?title=0&byline=0&portrait=0" type="video/webm"> -->
-    <!-- <source src="https://player.vimeo.com/video/119810871" type="video/mp4">
-</video> -->
-
-<!-- WORKING VIDEO BLOCK -->
-<!-- <div class="container-flex">
-  <div class="text-center mb-4" style="margin-top:-25px; padding-top:100px; padding-bottom:120px">
-    <div class="block-foreground py-4">
-      <h1 class="block-title text-white" style="letter-spacing:1px">Oregon's Accelerator</h1>
-      <h3 class="text-white" style="letter-spacing:1px">SURVIVE &nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;STRIVE&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i>&nbsp;&nbsp;THRIVE</h3>
-    </div>
-    <div class="opacity-layer" >
-      <iframe muted autoplay id="bg-video" src="https://vimeo.com/119810871" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-  </div>
-</div> -->
-
 
 <!-- ABOUT BLOCK -->
 <div class="container-fluid" id="about" style="background-color:#f4f4f4">
@@ -161,79 +141,30 @@
 </div>
 
 <!-- MAP BLOCK -->
-<div id='map'>
+<div class="block map">
+  <div id='map'>
+  </div>
+  <div class="portlandicon">
+    <div class="col-sm-12 shadow rounded">
+      <h1>Starve Ups Headquarters</h1>
+      <p class="small">220 NW 8th Ave.<br/>
+      Portland, OR 97209<br/>
+      <a href="mailto:contactus@starveups.com" class="">contactus@starveups.com</a></p>
+    </div>
+  </div>
 </div>
-  <!-- <iframe src="https://api.mapbox.com/styles/v1/lista/ciziz384t00142sn5idxy1hjo.html?title=true&access_token=pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA#7.1/44.893307/-121.974020/0" alt="" style="width: 100%; min-height: 500px"></iframe> -->
 
-<!-- <script> -->
-  <!-- // $(document).ready(function() {
-    // L.mapbox.accessToken = 'pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA';
-    // var map = L.mapbox.map('map')
-    //     .setView([38.97416, -95.23252], 15);
+<script type="text/javascript">
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/lista/ciziz384t00142sn5idxy1hjo',
+        center: [-121.974020, 44.893307],
+        zoom: 7
+    });
+    map.scrollZoom.disable();
 
-    // Use styleLayer to add a Mapbox style created in Mapbox Studio
-    // L.mapbox.styleLayer('mapbox://styles/lista/ciziz384t00142sn5idxy1hjo').addTo(map);
-    // map.scrollZoom.disable();
-    // container: 'map', // container id
-    // style: 'mapbox://styles/mapbox/light-v9', //hosted style id
-    // center: [-77.38, 39], // starting position
-    // zoom: 9 // starting zoom
-
-
-    // mapboxgl.accessToken = 'pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA';
-    // var map = new mapboxgl.Map({
-    // });
-  // }) -->
-<!-- </script> -->
-
-
-  <!-- // $.ajax({
-  //   dataType: 'text',
-  //   url: 'happy_hours/happening_now.json',
-  //   success: function(data) {
-  //     var geojson;
-  //     geojson = $.parseJSON(data);
-  //     return map.featureLayer.setGeoJSON(geojson);
-  //   }
-  // });
-
-// # add custom popups to each marker
-  // map.featureLayer.on('layeradd', function(e) {
-  //   var marker, properties;
-  //   marker = e.layer;
-  //   return properties = marker.feature.properties;
-  // });
-
-  // # create custom popup
-  // var popupContent;
-  //
-  // popupContent = '<div class="popup">' + '<h3>' + properties.name + '</h3>' + '<p>' + properties.address + '</p>' + '</div>';
-  //
-  // marker.bindPopup(popupContent, {
-  //   closeButton: false,
-  //   minWidth: 320
-  // });
-
-// # handles a sidebar happy hour click
-  // $('article li').click(function(e) {
-  //   var current, currentlyClickedName;
-  //   current = $(this);
-  //   return currentlyClickedName = current.find('h2').text();
-  // });
-
-// # opens/closes popup for currently clicked happy hour
-  // map.featureLayer.eachLayer(function(marker) {
-  //   var id;
-  //   if (marker.feature.properties.name === currentlyClickedName) {
-  //     id = layer._leaflet_id;
-  //     return map._layers[id].openPopup();
-  //   }
-  // }); -->
-
-
-
-
-
+</script>
 
 <!-- ADDRESS BLOCK -->
 <div class="block text-center text-white" id="contact" style="padding:120px 0 120px 0; background-color: #295D85">
