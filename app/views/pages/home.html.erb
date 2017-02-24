@@ -1,16 +1,15 @@
 <!-- VIDEO BLOCK -->
-<div class="block block-inverse text-center mb-4" style="margin-top:-25px">
+<div class="block block-inverse text-center mb-4">
   <div class="block-foreground">
     <h1 class="block-title" style="letter-spacing:1px">Oregon's Startup Scalerator</h1>
-    <h4 class="text-muted" style="letter-spacing:1px">THE END-TO-END ACCELERATOR FOR FOUNDERS &amp; STARTUPS</h4>
+    <h4 class="text-white" style="letter-spacing:1px">THE END-TO-END ACCELERATOR FOR FOUNDERS &amp; STARTUPS</h4>
   </div>
-  <div class="block-background" style="margin-top:-25px">
-    <iframe src="https://player.vimeo.com/video/119810871?title=0&byline=0" frameborder="0" ></iframe>
+  <div class="block-background">
+    <iframe id="bgvideo"  src="https://player.vimeo.com/video/119810871?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     <div class="opacity-layer">
     </div>
   </div>
 </div>
-<!-- <button class="btn btn-secondary btn-outline-secondary mt-1">With a simple button</button> -->
 
 <!-- <video playsinline autoplay muted loop poster="../images/placeholder_shaded.png" id="bgvid"> -->
 <!-- <video playsinline autoplay muted loop id="bgvid"> -->
@@ -68,10 +67,7 @@
 
 <!-- MEMBERS logo block  -->
 <div class="block">
-  <!-- <div class="container"> -->
-  <div class="col-sm-8 col-sm-offset-2">
-
-  </div>
+  <div class="container">
     <div class="row">
       <h1 class="mx-auto mb-4">Member Companies</h1>
     </div>
@@ -86,42 +82,37 @@
         There are no members in the directory.
       <% end %>
     </div>
-  <!-- </div> -->
+  </div>
 </div>
 
 <!-- EVENT block  -->
 <div class="block" style="background:url(../images/homebg2.jpg); background-attachment: fixed; background-size: auto">
-  <!-- <div class="container"> -->
-  <!-- <div class="col-sm-8 offset-sm-2"> -->
-    <div class="row">
-      <h1 class="mx-auto mb-4 text-white text-shadow">Don't Miss Our Next Event</h1>
-    </div>
-    <div class="row text-center mx-auto" style="max-width:960px">
-      <% if @events.any? %>
-        <% @events.each do |event| %>
-          <div class="col-sm-4 my-4 rounded text-muted" >
-            <div class="rounded-top" style="background:white">
-              <a href="/events/<%= event.id %>"><img src="../images/event.png" alt="" style="width: 100%" class="px-3 pt-3"></a>
-            </div>
-            <div class="rounded-bottom" style="background: white; height: 12rem; position:relative">
-              <h2 class="py-3 px-3"><%= link_to event.title, event_path(event) %></h2>
-              <p class="px-3 small center-text" style="position:absolute; bottom:1rem; left:0; width: 100%"><%= event.start.strftime("%m/%d")%> | <%= event.chapter %> |
-                <% if event.exclusive %>
-                  PRIVATE
-                <% else %>
-                  PUBLIC
-                <% end %>
-              <!-- <p class="px-3"><%= event.body %></p> -->
-            </div>
-          </div>
-        <% end %>
-        <% else %>
-        There are no members in the directory.
-      <% end %>
-    <!-- </div> -->
+  <div class="row">
+    <h1 class="mx-auto mb-4 text-white text-shadow">Don't Miss Our Next Event</h1>
   </div>
-
-  <!-- </div> -->
+  <div class="row text-center mx-auto" style="max-width:960px">
+    <% if @events.any? %>
+      <% @events.each do |event| %>
+        <div class="col-sm-4 my-4 rounded text-muted" >
+          <div class="rounded-top" style="background:white">
+            <a href="/events/<%= event.id %>"><img src="../images/event.png" alt="" style="width: 100%" class="px-3 pt-3"></a>
+          </div>
+          <div class="rounded-bottom" style="background: white; height: 12rem; position:relative">
+            <h2 class="py-3 px-3"><%= link_to event.title, event_path(event) %></h2>
+            <p class="px-3 small center-text" style="position:absolute; bottom:1rem; left:0; width: 100%"><%= event.start.strftime("%m/%d")%> | <%= event.chapter %> |
+              <% if event.exclusive %>
+                PRIVATE
+              <% else %>
+                PUBLIC
+              <% end %>
+            <!-- <p class="px-3"><%= event.body %></p> -->
+          </div>
+        </div>
+      <% end %>
+      <% else %>
+        <p>There are no members in the directory.</p>
+    <% end %>
+  </div>
 </div>
 
 <!-- STRATEGIC PARTNER logo block  -->
@@ -142,7 +133,7 @@
           </div>
         <% end %>
         <% else %>
-        There are no Partners in the directory.
+          <p>There are no Partners in the directory.</p>
       <% end %>
     </div>
   </div>
@@ -171,19 +162,29 @@
 
 <!-- MAP BLOCK -->
 <div id='map'>
-
-  <script>
-  $(document).ready(function() {
-    mapboxgl.accessToken = 'pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA';
-    var map = new mapboxgl.Map({
-      container: 'map', // container id
-      style: 'mapbox://styles/mapbox/dark-v9', //hosted style id
-      center: [-77.38, 39], // starting position
-      zoom: 9 // starting zoom
-    });
-  })
-  </script>
 </div>
+  <!-- <iframe src="https://api.mapbox.com/styles/v1/lista/ciziz384t00142sn5idxy1hjo.html?title=true&access_token=pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA#7.1/44.893307/-121.974020/0" alt="" style="width: 100%; min-height: 500px"></iframe> -->
+
+<!-- <script> -->
+  <!-- // $(document).ready(function() {
+    // L.mapbox.accessToken = 'pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA';
+    // var map = L.mapbox.map('map')
+    //     .setView([38.97416, -95.23252], 15);
+
+    // Use styleLayer to add a Mapbox style created in Mapbox Studio
+    // L.mapbox.styleLayer('mapbox://styles/lista/ciziz384t00142sn5idxy1hjo').addTo(map);
+    // map.scrollZoom.disable();
+    // container: 'map', // container id
+    // style: 'mapbox://styles/mapbox/light-v9', //hosted style id
+    // center: [-77.38, 39], // starting position
+    // zoom: 9 // starting zoom
+
+
+    // mapboxgl.accessToken = 'pk.eyJ1IjoibGlzdGEiLCJhIjoiY2l6aXV5MXY3MDJ0MDJ4b3dyb2ZxYm04eSJ9.t7rJNY6xP0PeeOODFzO4EA';
+    // var map = new mapboxgl.Map({
+    // });
+  // }) -->
+<!-- </script> -->
 
 
   <!-- // $.ajax({
@@ -263,16 +264,5 @@
         </p>
       </div>
     </div>
-    <!-- <form class="form-inline d-flex justify-content-center">
-      <div class="input-group input-group-lg">
-        <div class="input-group mb-2" >
-          <input type="text" class="form-control" placeholder="Email" id="sizing-addon1">
-          <span class="input-group-btn">
-            <button class="btn btn-primary" type="button">Subscribe</button>
-          </span>
-        </div>
-      </div>
-    </form>
-    <span class="text-muted mt-2"><strong>We respect privacy.</strong> And never share your email address.</span> -->
   </div>
 </div>
