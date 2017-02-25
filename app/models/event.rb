@@ -9,4 +9,7 @@ class Event < ApplicationRecord
     :allDay => self.allDay,
     }
   end
+
+  default_scope {order('start ASC')}
+
 end

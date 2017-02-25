@@ -55,7 +55,7 @@
       <% if @members.any? %>
         <% @members.each do |member| %>
           <div class="col-sm-3 px-auto text-center py-4">
-            <h5><%= member.company %></h5>
+            <a href="/profiles/<%= member.id %>"><h5><%= member.company %></h5></a>
           </div>
         <% end %>
         <% else %>
@@ -141,7 +141,7 @@
 </div>
 
 <!-- MAP BLOCK -->
-<div class="block map">
+<div class="block map hidden-sm-down">
   <div id='map'>
   </div>
   <div class="portlandicon">
@@ -183,7 +183,7 @@
         <p><strong>Starve Ups HQ</strong><br/>
           220 NW 8th Ave.<br/>
           Portland, OR 97209<br/>
-      ​         <a href="mailto:contactus@starveups.com" class="text-white">contactus@starveups.com</a>
+​        <a href="mailto:contactus@starveups.com" class="text-white">contactus@starveups.com</a>
         </p>
       </div>
       <div class="col-sm-4 my-4">
@@ -191,7 +191,7 @@
         <p><strong>Starve Ups HQ</strong><br/>
           220 NW 8th Ave.<br/>
           Portland, OR 97209<br/>
-      ​         <a href="mailto:contactus@starveups.com" class="text-white">contactus@starveups.com</a>
+​        <a href="mailto:contactus@starveups.com" class="text-white">contactus@starveups.com</a>
         </p>
       </div>
     </div>

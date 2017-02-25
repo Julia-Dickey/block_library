@@ -20,7 +20,12 @@
         <% end %>
       </span>
       <img src="../images/founders.jpeg" class="px-3" style="margin-top: -4" alt="">
-      <h3 class="pt-4 pb-2 px-3 text-blue"><%= @profile.company %></h3>
+      <img src="../images/logo_placeholder.png" alt="<%= @profile.company %>'s logo'" class="px-3 my-3" style="max-width: 200px">
+      <h3 class="pt-2 pb-2 px-3 text-blue"><%= @profile.company %></h3>
+      <p class="label mb-0 px-3 " style=""><strong><i class="fa fa-map-marker" aria-hidden="true"></i>
+      &nbsp;CHAPTER:</strong></p>
+      <p class="mb-3 px-3 summary-text" style="font-size: 1em">
+        <%= @profile.chapter %></p>
       <p class="label mb-0 px-3 " style=""><strong><i class="fa fa-area-chart" aria-hidden="true"></i> &nbsp;INDUSTRY:</strong></p>
       <p class="mb-3 px-3 summary-text" style="font-size: 1em">
       <%= @profile.industry %></p>
